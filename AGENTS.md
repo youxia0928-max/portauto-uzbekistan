@@ -1,65 +1,129 @@
-# 项目上下文
+# AGENTS.md - 汽车销售网站项目规范
 
-### 版本技术栈
+## 项目概览
 
-- **Framework**: Next.js 16 (App Router)
-- **Core**: React 19
-- **Language**: TypeScript 5
-- **UI 组件**: shadcn/ui (基于 Radix UI)
-- **Styling**: Tailwind CSS 4
+**项目名称**: AutoUzbekistan - 汽车销售网站
+**目标市场**: 乌兹别克斯坦（主要）、俄罗斯（后期扩展）
+**核心语言**: 俄语（主要）、英语（辅助）、乌兹别克语（可选）
+**网站类型**: B2C 汽车电商平台
+
+## 技术栈
+
+- **框架**: Next.js 16 (App Router)
+- **核心**: React 19
+- **语言**: TypeScript 5
+- **UI 组件**: shadcn/ui
+- **样式**: Tailwind CSS 4
+- **包管理**: pnpm
 
 ## 目录结构
 
 ```
-├── public/                 # 静态资源
-├── scripts/                # 构建与启动脚本
-│   ├── build.sh            # 构建脚本
-│   ├── dev.sh              # 开发环境启动脚本
-│   ├── prepare.sh          # 预处理脚本
-│   └── start.sh            # 生产环境启动脚本
+├── public/                    # 静态资源
+│   ├── images/               # 汽车图片
+│   └── flags/               # 国旗图标
 ├── src/
-│   ├── app/                # 页面路由与布局
-│   ├── components/ui/      # Shadcn UI 组件库
-│   ├── hooks/              # 自定义 Hooks
-│   ├── lib/                # 工具库
-│   │   └── utils.ts        # 通用工具函数 (cn)
-│   └── server.ts           # 自定义服务端入口
-├── next.config.ts          # Next.js 配置
-├── package.json            # 项目依赖管理
-└── tsconfig.json           # TypeScript 配置
+│   ├── app/                 # 页面路由
+│   │   ├── page.tsx        # 首页
+│   │   ├── catalog/        # 车型目录
+│   │   │   └── [id]/       # 车型详情
+│   │   ├── about/          # 关于我们
+│   │   ├── contact/        # 联系我们
+│   │   └── layout.tsx      # 根布局
+│   ├── components/
+│   │   ├── Header.tsx      # 头部导航
+│   │   ├── Footer.tsx      # 页脚
+│   │   ├── Hero.tsx        # Hero 轮播
+│   │   ├── CarCard.tsx     # 车型卡片
+│   │   ├── CarFilter.tsx   # 筛选组件
+│   │   └── LanguageSwitcher.tsx  # 语言切换
+│   ├── lib/
+│   │   ├── i18n.ts         # 多语言配置
+│   │   ├── translations/   # 翻译文件
+│   │   └── cars.ts         # 车型数据
+│   └── hooks/
+│       └── useLanguage.ts  # 语言 hook
 ```
 
-- 项目文件（如 app 目录、pages 目录、components 等）默认初始化到 `src/` 目录下。
+## 功能模块
 
-## 包管理规范
+### 1. 首页 (/)
+- Hero 轮播展示热门车型
+- 品牌快速入口
+- 热门车型展示
+- 为什么选择我们
+- CTA 行动召唤
 
-**仅允许使用 pnpm** 作为包管理器，**严禁使用 npm 或 yarn**。
-**常用命令**：
-- 安装依赖：`pnpm add <package>`
-- 安装开发依赖：`pnpm add -D <package>`
-- 安装所有依赖：`pnpm install`
-- 移除依赖：`pnpm remove <package>`
+### 2. 车型目录 (/catalog)
+- 车型网格展示
+- 多维度筛选（品牌、价格、类型、年份）
+- 排序功能
+- 分页
 
-## 开发规范
+### 3. 车型详情 (/catalog/[id])
+- 图片画廊
+- 详细规格参数
+- 配置清单
+- 在线咨询表单
+- 相关车型推荐
 
-### 编码规范
+### 4. 关于我们 (/about)
+- 公司介绍
+- 发展历程
+- 团队展示
+- 合作伙伴
 
-- 默认按 TypeScript `strict` 心智写代码；优先复用当前作用域已声明的变量、函数、类型和导入，禁止引用未声明标识符或拼错变量名。
-- 禁止隐式 `any` 和 `as any`；函数参数、返回值、解构项、事件对象、`catch` 错误在使用前应有明确类型或先完成类型收窄，并清理未使用的变量和导入。
+### 5. 联系我们 (/contact)
+- 联系信息
+- 地图展示
+- 在线留言表单
 
-### next.config 配置规范
+## 设计规范
 
-- 配置的路径不要写死绝对路径，必须使用 path.resolve(__dirname, ...)、import.meta.dirname 或 process.cwd() 动态拼接。
+### 色彩方案
+- **主色**: #1E3A8A (深蓝色)
+- **次要色**: #F97316 (橙色 - 强调色)
+- **背景色**: #0F172A (深色), #FFFFFF (浅色)
+- **文字色**: #F8FAFC (主文字), #94A3B8 (次要文字)
 
-### Hydration 问题防范
+### 排版
+- **标题字体**: Inter (俄语/英语支持良好)
+- **正文字体**: Inter
+- **字号层级**: 48px / 36px / 24px / 18px / 16px / 14px
 
-1. 严禁在 JSX 渲染逻辑中直接使用 typeof window、Date.now()、Math.random() 等动态数据。**必须使用 'use client' 并配合 useEffect + useState 确保动态内容仅在客户端挂载后渲染**；同时严禁非法 HTML 嵌套（如 <p> 嵌套 <div>）。
-2. **禁止使用 head 标签**，优先使用 metadata，详见文档：https://nextjs.org/docs/app/api-reference/functions/generate-metadata
-   1. 三方 CSS、字体等资源可在 `globals.css` 中顶部通过 `@import` 引入或使用 next/font
-   2. preload, preconnect, dns-prefetch 通过 ReactDOM 的 preload、preconnect、dns-prefetch 方法引入
-   3. json-ld 可阅读 https://nextjs.org/docs/app/guides/json-ld
+### 间距
+- **基础单位**: 4px
+- **组件间距**: 16px / 24px / 32px / 48px / 64px
 
-## UI 设计与组件规范 (UI & Styling Standards)
+### 响应式断点
+- **移动端**: < 768px
+- **平板**: 768px - 1024px
+- **桌面**: > 1024px
 
-- 模板默认预装核心组件库 `shadcn/ui`，位于`src/components/ui/`目录下
-- Next.js 项目**必须默认**采用 shadcn/ui 组件、风格和规范，**除非用户指定用其他的组件和规范。**
+## 多语言支持
+
+### 语言列表
+1. **俄语 (ru)** - 主要语言，适用于乌兹别克斯坦和俄罗斯
+2. **英语 (en)** - 辅助语言
+
+### 翻译范围
+- 导航菜单
+- 页面标题和内容
+- 表单标签和提示
+- 错误信息
+- 按钮文本
+
+## SEO 优化
+
+- 语义化 HTML
+- Open Graph 标签
+- 面包屑导航
+- 结构化数据
+-  sitemap.xml
+
+## 性能要求
+
+- 首屏加载 < 3s
+- 图片优化 (WebP)
+- 组件懒加载
+- 代码分割
