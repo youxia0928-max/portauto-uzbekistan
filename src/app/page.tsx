@@ -105,12 +105,12 @@ export default function HomePage() {
 
           {/* More Button */}
           <div className="text-center">
-            <Link href="/about">
+            <Link href="/case">
               <Button 
                 size="lg" 
                 className="bg-blue-900 hover:bg-blue-800"
               >
-                了解更多
+                更多案例
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
