@@ -8,8 +8,8 @@ export const translations = {
     contact: 'Контакты',
     
     // 首页
-    hero_title: 'Найдите идеальный автомобиль',
-    hero_subtitle: 'Лучшие предложения на автомобили из Китая, Японии и Кореи',
+    hero_title: 'РЕШЕНИЯ ДЛЯ ЭКСПОРТА АВТО',
+    hero_subtitle: 'Мы обеспечиваем полный цикл: закупку, транспортировку и послепродажное обслуживание',
     explore_catalog: 'Смотреть кейсы',
     popular_models: 'Популярные модели',
     why_choose_us: 'Почему выбирают нас',
@@ -144,7 +144,7 @@ export const translations = {
     contact: 'Contact',
     
     // Home
-    hero_title: 'Find Your Perfect Car',
+    hero_title: 'AUTO EXPORT SOLUTIONS',
     hero_subtitle: 'Best deals on cars from China, Japan and Korea',
     explore_catalog: 'View Cases',
     popular_models: 'Popular Models',
@@ -280,8 +280,8 @@ export const translations = {
     contact: '联系我们',
     
     // 首页
-    hero_title: '找到您的理想座驾',
-    hero_subtitle: '中国、日本、韩国汽车最优选择',
+    hero_title: '汽车出口解决方案',
+    hero_subtitle: '我们提供从采购、运输到售后的全链条服务',
     explore_catalog: '浏览案例',
     popular_models: '热门车型',
     why_choose_us: '为什么选择我们',

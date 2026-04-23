@@ -1,114 +1,89 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { useLanguage } from '@/lib/useLanguage';
 import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-
-const heroSlides = [
-  {
-    id: 1,
-    image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80',
-    title: 'chery-tiggo-7-pro',
-    subtitle: 'chery-coolray',
-  },
-  {
-    id: 2,
-    image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80',
-    title: 'toyota-camry',
-    subtitle: 'toyota-sonata',
-  },
-  {
-    id: 3,
-    image: 'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1920&q=80',
-    title: 'geely-coolray',
-    subtitle: 'haval-jolion',
-  },
-];
+import { Star } from 'lucide-react';
 
 export default function Hero() {
   const { t } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
 
   return (
-    <section className="relative h-[500px] md:h-[600px] overflow-hidden">
-      {/* Slides */}
-      {heroSlides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${slide.image})` }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent" />
-        </div>
-      ))}
+    <section className="relative h-[600px] md:h-[700px] overflow-hidden">
+      {/* Background Image - Car Port */}
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ 
+          backgroundImage: `url('/hero-bg.jpg')`,
+        }}
+      />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/40" />
+      
+      {/* Dark Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 via-transparent to-slate-900/60" />
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 h-full flex items-center">
-        <div className="max-w-xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight">
-            {t('hero_title')}
+        <div className="max-w-2xl">
+          {/* Main Title */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            AUTO EXPORT SOLUTIONS
           </h1>
-          <p className="text-lg md:text-xl text-slate-200 mb-8">
-            {t('hero_subtitle')}
+          
+          {/* Rating Badge */}
+          <div className="flex items-center gap-2 mb-6">
+            <div className="flex">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
+              ))}
+            </div>
+            <span className="text-white/80 text-sm font-medium">SALES QUALITY</span>
+          </div>
+          
+          {/* Subtitle */}
+          <p className="text-lg md:text-xl text-white/90 mb-4 font-medium">
+            {t('b2b_service_desc')}
           </p>
-          <Link href="/catalog">
+          
+          {/* Tagline */}
+          <p className="text-white/70 mb-8 text-sm md:text-base">
+            Choose the right partner once, and save yourself all the troubles!
+          </p>
+          
+          {/* CTA Button */}
+          <Link href="/contact">
             <Button
               size="lg"
-              className="bg-orange-500 hover:bg-orange-600 text-white px-8"
+              className="bg-white text-slate-900 hover:bg-slate-100 px-10"
             >
-              {t('explore_catalog')}
+              CONTACT US
             </Button>
           </Link>
         </div>
-      </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
-      >
-        <ChevronLeft className="w-6 h-6 text-white" />
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-colors"
-      >
-        <ChevronRight className="w-6 h-6 text-white" />
-      </button>
-
-      {/* Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
-        {heroSlides.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors ${
-              index === currentSlide ? 'bg-orange-500' : 'bg-white/50'
-            }`}
-          />
-        ))}
+        {/* Three Steps Process - Right Side */}
+        <div className="hidden lg:flex flex-col gap-4 ml-auto mr-12">
+          <div className="flex items-center gap-4">
+            <span className="text-3xl font-bold text-white/40">1</span>
+            <span className="text-lg font-semibold text-white border-t border-white/30 pt-2">
+              GET AN QUOTE
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="text-3xl font-bold text-white/40">2</span>
+            <span className="text-lg font-semibold text-white border-t border-white/30 pt-2">
+              TRANSPORTATION
+            </span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="text-3xl font-bold text-white/40">3</span>
+            <span className="text-lg font-semibold text-white border-t border-white/30 pt-2">
+              RECEIVE
+            </span>
+          </div>
+        </div>
       </div>
     </section>
   );
