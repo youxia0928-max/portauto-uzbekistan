@@ -8,7 +8,7 @@ export default function AboutUs() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="relative py-20">
+    <section className="relative py-20">
       {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
