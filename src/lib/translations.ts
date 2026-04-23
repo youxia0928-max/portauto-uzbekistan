@@ -119,13 +119,6 @@ export const translations = {
     // WhatsApp
     whatsapp: 'WhatsApp咨询',
     whatsapp_message: '您好，我想咨询汽车出口服务',
-    
-    // 新闻
-    news_title: '最新动态',
-    news_subtitle: '了解行业资讯和公司动态',
-    view_all: '查看全部',
-    read_more: '了解更多',
-    more: '更多',
 
     // B2B出口服务
     b2b_service: 'B2B汽车出口服务',
@@ -256,13 +249,6 @@ export const translations = {
     // WhatsApp
     whatsapp: 'WhatsApp Consultation',
     whatsapp_message: 'Hello, I would like to inquire about car export services',
-    
-    // News
-    news_title: 'Latest News',
-    news_subtitle: 'Stay updated with industry news and company updates',
-    view_all: 'View All',
-    read_more: 'Read More',
-    more: 'More',
 
     // B2B Service
     b2b_service: 'B2B Car Export Service',
@@ -393,13 +379,6 @@ export const translations = {
     // WhatsApp
     whatsapp: 'WhatsApp咨询',
     whatsapp_message: '您好，我想咨询汽车出口服务',
-    
-    // 新闻
-    news_title: '最新动态',
-    news_subtitle: '了解行业资讯和公司动态',
-    view_all: '查看全部',
-    read_more: '了解更多',
-    more: '更多',
 
     // B2B出口服务
     b2b_service: 'B2B汽车出口服务',

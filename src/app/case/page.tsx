@@ -175,7 +175,7 @@ export default function CasePage() {
                     {item.description}
                   </p>
                   <Button variant="ghost" className="w-full justify-between text-blue-900 hover:text-blue-700 hover:bg-blue-50">
-                    {t('read_more')}
+                    {t('details')}
                     <ArrowRight className="w-4 h-4" />
                   </Button>
                 </CardContent>

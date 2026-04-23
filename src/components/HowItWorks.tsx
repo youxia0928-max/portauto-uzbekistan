@@ -81,7 +81,7 @@ export default function AboutUs() {
             </p>
             <Link href="/about">
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
-                {t('more')}
+                Подробнее / More / 更多
               </Button>
             </Link>
           </div>
