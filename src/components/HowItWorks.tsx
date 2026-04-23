@@ -79,9 +79,9 @@ export default function AboutUs() {
             <p className="text-lg text-white leading-relaxed mb-8 drop-shadow">
               Whether you are looking for a fuel-efficient Toyota for a taxi fleet or a luxury Geely SUV for resale, PortAuto is your one-stop gateway to the Chinese auto market.
             </p>
-            <Link href="/case">
+            <Link href="/about">
               <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
-                View Our Cases
+                {t('more')}
               </Button>
             </Link>
           </div>

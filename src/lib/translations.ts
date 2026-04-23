@@ -125,7 +125,8 @@ export const translations = {
     news_subtitle: '了解行业资讯和公司动态',
     view_all: '查看全部',
     read_more: '了解更多',
-    
+    more: '更多',
+
     // B2B出口服务
     b2b_service: 'B2B汽车出口服务',
     b2b_service_desc: '连接全球车源，专业的汽车出口一站式解决方案',
@@ -261,7 +262,8 @@ export const translations = {
     news_subtitle: 'Stay updated with industry news and company updates',
     view_all: 'View All',
     read_more: 'Read More',
-    
+    more: 'More',
+
     // B2B Service
     b2b_service: 'B2B Car Export Service',
     b2b_service_desc: 'Connect with global car sources, professional one-stop automotive export solutions',
@@ -397,7 +399,8 @@ export const translations = {
     news_subtitle: '了解行业资讯和公司动态',
     view_all: '查看全部',
     read_more: '了解更多',
-    
+    more: '更多',
+
     // B2B出口服务
     b2b_service: 'B2B汽车出口服务',
     b2b_service_desc: '连接全球车源，专业的汽车出口一站式解决方案',
