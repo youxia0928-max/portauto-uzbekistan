@@ -13,7 +13,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { ChevronLeft, ChevronRight, Check, Phone, Mail, MapPin } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Check, Phone, Mail, MapPin, Calendar, Car as CarIcon } from 'lucide-react';
 
 interface CarDetailPageProps {
   params: Promise<{ id: string }>;
@@ -47,9 +47,8 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setTimeout(() => setSubmitted(false), 5000);
     setFormData({ name: '', phone: '', email: '', message: '' });
   };
 
@@ -76,7 +75,7 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
     return driveMap[drive];
   };
 
-  // Get related cars (same brand or same type)
+  // Get related cars
   const relatedCars = cars
     .filter((c) => c.id !== car.id && (c.brand === car.brand || c.type === car.type))
     .slice(0, 3);
@@ -107,11 +106,11 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
                   src={car.images[selectedImage]}
                   alt={`${car.brand} ${car.model}`}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 66vw"
                   className="object-cover"
                   priority
                 />
                 
-                {/* Image Navigation */}
                 <button
                   onClick={prevImage}
                   className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-colors"
@@ -125,10 +124,9 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
                   <ChevronRight className="w-6 h-6" />
                 </button>
 
-                {/* Badges */}
                 <div className="absolute top-4 left-4 flex gap-2">
                   {car.isNew && (
-                    <Badge className="bg-orange-500 hover:bg-orange-600">
+                    <Badge className="bg-blue-900 hover:bg-blue-800">
                       {t('new')}
                     </Badge>
                   )}
@@ -155,6 +153,7 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
                         src={image}
                         alt={`Thumbnail ${index + 1}`}
                         fill
+                        sizes="80px"
                         className="object-cover"
                       />
                     </button>
@@ -180,7 +179,8 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
 
               {/* Specifications */}
               <div className="mb-8">
-                <h2 className="text-xl font-semibold text-slate-900 mb-4">
+                <h2 className="text-xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
+                  <CarIcon className="w-5 h-5" />
                   {t('specifications')}
                 </h2>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -201,8 +201,11 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
                     <p className="font-medium text-slate-900">{car.fuel}</p>
                   </div>
                   <div className="bg-slate-50 rounded-lg p-4">
-                    <p className="text-sm text-slate-500 mb-1">{t('mileage')}</p>
-                    <p className="font-medium text-slate-900">{car.mileage.toLocaleString()} km</p>
+                    <p className="text-sm text-slate-500 mb-1">{t('year')}</p>
+                    <p className="font-medium text-slate-900 flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      {car.year}
+                    </p>
                   </div>
                   <div className="bg-slate-50 rounded-lg p-4">
                     <p className="text-sm text-slate-500 mb-1">{t('color')}</p>
@@ -230,30 +233,27 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
             </div>
           </div>
 
-          {/* Sidebar */}
+          {/* Sidebar - Inquiry Form */}
           <div className="space-y-6">
-            {/* Price Card */}
             <div className="bg-white rounded-xl p-6 shadow-sm sticky top-24">
-              <div className="mb-6">
-                <p className="text-sm text-slate-500 mb-1">{t('from_price')}</p>
-                <p className="text-4xl font-bold text-blue-900">
-                  ${car.price.toLocaleString()}
-                </p>
-              </div>
-
               {/* Contact Info */}
-              <div className="space-y-3 mb-6">
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-orange-500" />
-                  <span className="text-slate-700">+998 71 123 4567</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-orange-500" />
-                  <span className="text-slate-700">info@autouzbek.uz</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="w-5 h-5 text-orange-500" />
-                  <span className="text-slate-700">{t('address_value')}</span>
+              <div className="mb-6">
+                <h3 className="text-lg font-semibold text-slate-900 mb-4">
+                  {t('contact')}
+                </h3>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-blue-900" />
+                    <span className="text-slate-700">+998 71 123 4567</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Mail className="w-5 h-5 text-blue-900" />
+                    <span className="text-slate-700">info@autouzbek.uz</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="w-5 h-5 text-blue-900" />
+                    <span className="text-slate-700">{t('address_value')}</span>
+                  </div>
                 </div>
               </div>
 
@@ -268,13 +268,13 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
                   {t('inquiry_desc')}
                 </p>
 
-                {submitted ? (
+                {submitted && (
                   <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
                     <p className="text-green-700 text-sm">
                       {t('success_message')}
                     </p>
                   </div>
-                ) : null}
+                )}
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
@@ -313,9 +313,10 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
                       rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder={`I'm interested in ${car.brand} ${car.model}...`}
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600">
+                  <Button type="submit" className="w-full bg-blue-900 hover:bg-blue-800">
                     {t('send_inquiry')}
                   </Button>
                 </form>
@@ -332,7 +333,7 @@ export default function CarDetailPage({ params }: CarDetailPageProps) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedCars.map((car) => (
-                <CarCard key={car.id} car={car} />
+                <CarCard key={car.id} car={car} showCTA={true} />
               ))}
             </div>
           </section>

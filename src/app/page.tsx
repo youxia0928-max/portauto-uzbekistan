@@ -56,7 +56,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {popularCars.map((car) => (
-              <CarCard key={car.id} car={car} />
+              <CarCard key={car.id} car={car} showCTA={true} />
             ))}
           </div>
 
