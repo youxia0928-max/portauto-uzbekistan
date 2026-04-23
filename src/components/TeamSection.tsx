@@ -1,7 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/lib/useLanguage';
-import { Users, Award, Globe, Handshake, Building2, UsersRound } from 'lucide-react';
+import { Users, Award, Globe, Handshake, Building2, UsersRound, Car } from 'lucide-react';
 
 export default function TeamSection() {
   const { t } = useLanguage();
@@ -38,6 +38,37 @@ export default function TeamSection() {
       departments: ['总经理办公室', '平台运营', '市场销售', '产品技术开发', '后勤部门'],
     },
   ];
+
+  const chineseBrands = [
+    { name: 'Lynk&Co', label: '领克' },
+    { name: 'Zeekr', label: '极氪' },
+    { name: 'Galaxy', label: '银河' },
+    { name: 'GAC', label: '广汽' },
+    { name: 'Aion', label: '埃安' },
+    { name: 'Li Auto', label: '理想' },
+    { name: 'Leapmotor', label: '零跑' },
+    { name: 'AITO', label: '问界' },
+  ];
+
+  const internationalBrands = [
+    { 
+      name: 'Toyota', 
+      label: '丰田',
+      models: ['Camry', 'Highlander', 'Rav4']
+    },
+    { 
+      name: 'Kia', 
+      label: '起亚',
+      models: ['K3', 'K5', 'KX1', 'Sportage', 'Seltos']
+    },
+    { 
+      name: 'VW', 
+      label: '大众',
+      models: ['ID.', 'Passat', 'Tiguan', 'Golf', 'Tavendor', 'T-Roc', 'T-Cross']
+    },
+  ];
+
+  const otherBrands = ['Hyundai', 'Audi', 'BMW', 'Mazda', 'Mitsubishi'];
 
   return (
     <section className="py-20 bg-slate-50">
@@ -109,6 +140,83 @@ export default function TeamSection() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        {/* Brand Partnership Section */}
+        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg mb-12">
+          <div className="text-center mb-10">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">
+              Strategic Partnership with Brands
+            </h3>
+          </div>
+
+          {/* Chinese Brands */}
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-2xl">🇨🇳</span>
+              <h4 className="text-lg font-bold text-slate-900">Chinese Brands</h4>
+            </div>
+            <p className="text-slate-600 text-sm mb-6">
+              For all these brands and models, we have got the <span className="text-orange-500 font-semibold">new car exporting licence from factory</span>.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 gap-4">
+              {chineseBrands.map((brand, index) => (
+                <div key={index} className="bg-slate-50 rounded-xl p-4 text-center hover:bg-slate-100 transition-colors">
+                  <div className="w-16 h-16 mx-auto mb-2 bg-white rounded-lg flex items-center justify-center">
+                    <span className="text-lg font-bold text-blue-900">{brand.name}</span>
+                  </div>
+                  <p className="text-sm text-slate-600">{brand.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-slate-200 my-10" />
+
+          {/* International Brands */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-2xl">🌍</span>
+              <h4 className="text-lg font-bold text-slate-900">International Brands</h4>
+            </div>
+            <p className="text-slate-600 text-sm mb-6">
+              For all popular international brands, we have cooperated with them and could export by modified channel smoothly.
+            </p>
+            
+            {/* Brand Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+              {internationalBrands.map((brand, index) => (
+                <div key={index} className="border border-slate-200 rounded-xl p-5">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-12 h-12 bg-slate-100 rounded-lg flex items-center justify-center">
+                      <span className="font-bold text-slate-800">{brand.name}</span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-slate-900">{brand.name}</p>
+                      <p className="text-sm text-slate-500">{brand.label}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {brand.models.map((model, i) => (
+                      <span key={i} className="px-2 py-1 bg-blue-50 text-blue-800 text-xs rounded">
+                        {model}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Other Brands */}
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {otherBrands.map((brand, index) => (
+                <div key={index} className="px-6 py-3 bg-slate-100 rounded-lg">
+                  <span className="font-semibold text-slate-700">{brand}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
