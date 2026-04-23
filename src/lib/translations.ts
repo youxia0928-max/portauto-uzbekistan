@@ -102,6 +102,34 @@ export const translations = {
     submit: 'Отправить',
     success_message: 'Сообщение отправлено! Мы свяжемся с вами в ближайшее время.',
     
+    // 统计
+    stats_warehouse: '仓库',
+    stats_car_source: '车源',
+    stats_sale_country: '销售国家',
+    
+    // 三步流程
+    how_it_works: '如何运作',
+    step1_title: '获取报价',
+    step1_desc: '告诉我们您想要的车型，我们提供最优价格',
+    step2_title: '运输安排',
+    step2_desc: '专业物流团队确保安全快速运输',
+    step3_title: '收车验收',
+    step3_desc: '验车满意后付款，售后无忧',
+    
+    // WhatsApp
+    whatsapp: 'WhatsApp咨询',
+    whatsapp_message: '您好，我想咨询汽车出口服务',
+    
+    // 新闻
+    news_title: '最新动态',
+    news_subtitle: '了解行业资讯和公司动态',
+    view_all: '查看全部',
+    read_more: '了解更多',
+    
+    // B2B出口服务
+    b2b_service: 'B2B汽车出口服务',
+    b2b_service_desc: '连接全球车源，专业的汽车出口一站式解决方案',
+    
     // 通用
     loading: 'Загрузка...',
     error: 'Ошибка',
@@ -210,6 +238,34 @@ export const translations = {
     submit: 'Submit',
     success_message: 'Message sent! We will contact you shortly.',
     
+    // Stats
+    stats_warehouse: 'Warehouse',
+    stats_car_source: 'Car Source',
+    stats_sale_country: 'Sale Countries',
+    
+    // How It Works
+    how_it_works: 'How It Works',
+    step1_title: 'Get Quote',
+    step1_desc: 'Tell us what car you want, we provide the best price',
+    step2_title: 'Transportation',
+    step2_desc: 'Professional logistics team ensures safe and fast delivery',
+    step3_title: 'Receive',
+    step3_desc: 'Inspect the car, pay after satisfaction, worry-free after-sales',
+    
+    // WhatsApp
+    whatsapp: 'WhatsApp Consultation',
+    whatsapp_message: 'Hello, I would like to inquire about car export services',
+    
+    // News
+    news_title: 'Latest News',
+    news_subtitle: 'Stay updated with industry news and company updates',
+    view_all: 'View All',
+    read_more: 'Read More',
+    
+    // B2B Service
+    b2b_service: 'B2B Car Export Service',
+    b2b_service_desc: 'Connect with global car sources, professional one-stop automotive export solutions',
+    
     // Common
     loading: 'Loading...',
     error: 'Error',
@@ -317,6 +373,34 @@ export const translations = {
     your_message: '您的留言',
     submit: '提交',
     success_message: '消息已发送！我们会尽快与您联系。',
+    
+    // 统计
+    stats_warehouse: '仓库',
+    stats_car_source: '车源',
+    stats_sale_country: '销售国家',
+    
+    // 三步流程
+    how_it_works: '如何运作',
+    step1_title: '获取报价',
+    step1_desc: '告诉我们您想要的车型，我们提供最优价格',
+    step2_title: '运输安排',
+    step2_desc: '专业物流团队确保安全快速运输',
+    step3_title: '收车验收',
+    step3_desc: '验车满意后付款，售后无忧',
+    
+    // WhatsApp
+    whatsapp: 'WhatsApp咨询',
+    whatsapp_message: '您好，我想咨询汽车出口服务',
+    
+    // 新闻
+    news_title: '最新动态',
+    news_subtitle: '了解行业资讯和公司动态',
+    view_all: '查看全部',
+    read_more: '了解更多',
+    
+    // B2B出口服务
+    b2b_service: 'B2B汽车出口服务',
+    b2b_service_desc: '连接全球车源，专业的汽车出口一站式解决方案',
     
     // 通用
     loading: '加载中...',

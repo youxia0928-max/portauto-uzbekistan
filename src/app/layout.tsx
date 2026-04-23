@@ -3,6 +3,7 @@ import { Inspector } from 'react-dev-inspector';
 import { LanguageProvider } from '@/lib/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import WhatsAppButton from '@/components/WhatsAppButton';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -60,6 +61,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <WhatsAppButton />
         </LanguageProvider>
       </body>
     </html>

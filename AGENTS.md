@@ -4,8 +4,8 @@
 
 **项目名称**: AutoUzbekistan - 汽车销售网站
 **目标市场**: 乌兹别克斯坦（主要）、俄罗斯（后期扩展）
-**核心语言**: 俄语（主要）、英语（辅助）、乌兹别克语（可选）
-**网站类型**: B2C 汽车电商平台
+**核心语言**: 俄语（主要）、中文、英语
+**网站类型**: B2B 汽车出口服务平台（客资收集模式）
 
 ## 技术栈
 
@@ -36,7 +36,11 @@
 │   │   ├── Hero.tsx        # Hero 轮播
 │   │   ├── CarCard.tsx     # 车型卡片
 │   │   ├── CarFilter.tsx   # 筛选组件
-│   │   └── LanguageSwitcher.tsx  # 语言切换
+│   │   ├── LanguageSwitcher.tsx  # 语言切换
+│   │   ├── StatsSection.tsx      # 数据统计展示（200+仓库等）
+│   │   ├── HowItWorks.tsx       # 三步流程展示
+│   │   ├── NewsSection.tsx      # 新闻/案例模块
+│   │   └── WhatsAppButton.tsx   # WhatsApp浮动按钮
 │   ├── lib/
 │   │   ├── i18n.ts         # 多语言配置
 │   │   ├── translations/   # 翻译文件
@@ -49,9 +53,11 @@
 
 ### 1. 首页 (/)
 - Hero 轮播展示热门车型
-- 品牌快速入口
+- 数据统计展示（200+ Warehouse, 15000+ Car Source, 20+ Sale Country）
+- 三步流程展示（Get Quote -> Transportation -> Receive）
 - 热门车型展示
-- 为什么选择我们
+- 新闻/案例模块
+- WhatsApp 浮动咨询按钮
 - CTA 行动召唤
 
 ### 2. 车型目录 (/catalog)
