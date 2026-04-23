@@ -39,6 +39,7 @@
 │   │   ├── StatsSection.tsx      # 数据统计展示（200+仓库等）
 │   │   ├── HowItWorks.tsx       # 三步流程展示
 │   │   ├── NewsSection.tsx      # 新闻/案例模块
+│   │   ├── TeamSection.tsx      # 团队能力展示模块
 │   │   └── WhatsAppButton.tsx   # WhatsApp浮动按钮
 │   ├── lib/
 │   │   ├── i18n.ts         # 多语言配置
@@ -51,12 +52,10 @@
 ## 功能模块
 
 ### 1. 首页 (/)
-- Hero 轮播展示热门车型
+- Hero 轮播展示
 - 数据统计展示（200+ Warehouse, 15000+ Car Source, 20+ Sale Country）
 - 三步流程展示（Get Quote -> Transportation -> Receive）
-- 热门车型展示
-- 新闻/案例模块
-- WhatsApp 浮动咨询按钮
+- 团队能力展示（Team Ability）
 - CTA 行动召唤
 
 ### 2. 成功案例 (/case)
