@@ -22,7 +22,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     
     // 从 localStorage 读取保存的语言设置
     const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && (savedLang === 'ru' || savedLang === 'en')) {
+    if (savedLang && ['ru', 'en', 'zh'].includes(savedLang)) {
       setLanguage(savedLang);
       setIsLoading(false);
       return;
@@ -32,14 +32,16 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     fetch('/api/detect-language')
       .then(res => res.json())
       .then(data => {
-        if (data.language === 'ru' || data.language === 'en') {
+        if (['ru', 'en', 'zh'].includes(data.language)) {
           setLanguage(data.language);
         }
       })
       .catch(() => {
         // 如果获取失败，使用浏览器语言
         const browserLang = navigator.language.toLowerCase();
-        if (browserLang.includes('ru') || browserLang.includes('uz')) {
+        if (browserLang.includes('zh')) {
+          setLanguage('zh');
+        } else if (browserLang.includes('ru') || browserLang.includes('uz')) {
           setLanguage('ru');
         }
       })

@@ -6,6 +6,12 @@ import { Menu, X, Globe } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 
+const languages = [
+  { code: 'ru' as const, label: 'Русский' },
+  { code: 'zh' as const, label: '中文' },
+  { code: 'en' as const, label: 'English' },
+];
+
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -17,8 +23,15 @@ export default function Header() {
     { href: '/contact', label: t('contact') },
   ];
 
-  const toggleLanguage = () => {
-    setLanguage(language === 'ru' ? 'en' : 'ru');
+  const cycleLanguage = () => {
+    const currentIndex = languages.findIndex(l => l.code === language);
+    const nextIndex = (currentIndex + 1) % languages.length;
+    setLanguage(languages[nextIndex].code);
+  };
+
+  const getCurrentLanguageLabel = () => {
+    const lang = languages.find(l => l.code === language);
+    return lang?.label || 'Русский';
   };
 
   return (
@@ -54,11 +67,11 @@ export default function Header() {
             <Button
               variant="ghost"
               size="sm"
-              onClick={toggleLanguage}
+              onClick={cycleLanguage}
               className="flex items-center space-x-1"
             >
               <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium uppercase">{language}</span>
+              <span className="text-sm font-medium">{getCurrentLanguageLabel()}</span>
             </Button>
 
             <Button
