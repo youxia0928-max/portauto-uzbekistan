@@ -3,14 +3,14 @@ export const translations = {
   ru: {
     // 导航
     home: 'Главная',
-    catalog: 'Каталог',
+    case: 'Кейсы',
     about: 'О нас',
     contact: 'Контакты',
     
     // 首页
     hero_title: 'Найдите идеальный автомобиль',
     hero_subtitle: 'Лучшие предложения на автомобили из Китая, Японии и Кореи',
-    explore_catalog: 'Смотреть каталог',
+    explore_catalog: 'Смотреть кейсы',
     popular_models: 'Популярные модели',
     why_choose_us: 'Почему выбирают нас',
     quality_guarantee: 'Гарантия качества',
@@ -134,19 +134,19 @@ export const translations = {
     loading: 'Загрузка...',
     error: 'Ошибка',
     not_found: 'Не найдено',
-    back_to_catalog: 'Назад в каталог',
+    back_to_catalog: 'Назад к кейсам',
   },
   en: {
     // Navigation
     home: 'Home',
-    catalog: 'Catalog',
+    case: 'Cases',
     about: 'About Us',
     contact: 'Contact',
     
     // Home
     hero_title: 'Find Your Perfect Car',
     hero_subtitle: 'Best deals on cars from China, Japan and Korea',
-    explore_catalog: 'View Catalog',
+    explore_catalog: 'View Cases',
     popular_models: 'Popular Models',
     why_choose_us: 'Why Choose Us',
     quality_guarantee: 'Quality Guarantee',
@@ -270,19 +270,19 @@ export const translations = {
     loading: 'Loading...',
     error: 'Error',
     not_found: 'Not Found',
-    back_to_catalog: 'Back to Catalog',
+    back_to_catalog: 'Back to Cases',
   },
   zh: {
     // 导航
     home: '首页',
-    catalog: '车型目录',
+    case: '案例',
     about: '关于我们',
     contact: '联系我们',
     
     // 首页
     hero_title: '找到您的理想座驾',
     hero_subtitle: '中国、日本、韩国汽车最优选择',
-    explore_catalog: '浏览车型',
+    explore_catalog: '浏览案例',
     popular_models: '热门车型',
     why_choose_us: '为什么选择我们',
     quality_guarantee: '品质保证',
@@ -406,7 +406,7 @@ export const translations = {
     loading: '加载中...',
     error: '错误',
     not_found: '未找到',
-    back_to_catalog: '返回车型目录',
+    back_to_catalog: '返回案例',
   }
 } as const;
 

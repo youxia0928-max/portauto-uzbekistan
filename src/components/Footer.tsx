@@ -37,8 +37,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/catalog" className="text-slate-400 hover:text-white text-sm transition-colors">
-                  {t('catalog')}
+                <Link href="/case" className="text-slate-400 hover:text-white text-sm transition-colors">
+                  {t('case')}
                 </Link>
               </li>
               <li>

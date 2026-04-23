@@ -43,7 +43,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center">
-            <Link href="/catalog">
+            <Link href="/case">
               <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
                 {t('explore_catalog')}
               </Button>
@@ -68,7 +68,7 @@ export default function HomePage() {
             {t('b2b_service_desc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/catalog">
+            <Link href="/case">
               <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                 {t('explore_catalog')}
               </Button>
