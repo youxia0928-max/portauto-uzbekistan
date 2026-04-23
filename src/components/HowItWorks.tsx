@@ -8,10 +8,10 @@ export default function AboutUs() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative py-20 bg-slate-50">
+    <section className="relative py-20">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url('/about-bg.jpg')` }}
       />
       
@@ -20,27 +20,27 @@ export default function AboutUs() {
         <div className="max-w-4xl mx-auto">
           {/* Title */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 drop-shadow-lg">
               {t('about')}
             </h2>
           </div>
 
           {/* Main Introduction */}
           <div className="text-center mb-12">
-            <p className="text-lg text-slate-700 leading-relaxed">
+            <p className="text-lg text-white leading-relaxed drop-shadow">
               PortAuto is a professional automotive export company based in China, providing a full range of vehicle sourcing solutions for global clients. We specialize in exporting both traditional Gasoline Vehicles and the latest New Energy Vehicles to markets including Central Asia, the Middle East, Russia, and Africa, etc.
             </p>
           </div>
 
           {/* What We Offer Section */}
           <div className="mb-12">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6 text-center">
+            <h3 className="text-2xl font-bold text-white mb-6 text-center drop-shadow-lg">
               What We Offer:
             </h3>
             
             <div className="space-y-6">
               {/* Gasoline Vehicles */}
-              <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-bold text-blue-900 mb-3">
                   Gasoline Vehicles:
                 </h4>
@@ -50,7 +50,7 @@ export default function AboutUs() {
               </div>
 
               {/* Energy Vehicles */}
-              <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-bold text-blue-900 mb-3">
                   Energy Vehicles:
                 </h4>
@@ -60,7 +60,7 @@ export default function AboutUs() {
               </div>
 
               {/* Supply Chain */}
-              <div className="bg-white rounded-xl p-6 shadow-sm">
+              <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-sm">
                 <h4 className="text-xl font-bold text-blue-900 mb-3">
                   Supply Chain:
                 </h4>
@@ -73,14 +73,14 @@ export default function AboutUs() {
 
           {/* Why PortAuto Section */}
           <div className="text-center">
-            <h3 className="text-2xl font-bold text-slate-900 mb-6">
+            <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-lg">
               Why PortAuto?
             </h3>
-            <p className="text-lg text-slate-700 leading-relaxed mb-8">
+            <p className="text-lg text-white leading-relaxed mb-8 drop-shadow">
               Whether you are looking for a fuel-efficient Toyota for a taxi fleet or a luxury Geely SUV for resale, PortAuto is your one-stop gateway to the Chinese auto market.
             </p>
             <Link href="/case">
-              <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
+              <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
                 View Our Cases
               </Button>
             </Link>
