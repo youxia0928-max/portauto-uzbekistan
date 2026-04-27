@@ -2,8 +2,7 @@
 
 import { useLanguage } from '@/lib/useLanguage';
 import type { TranslationKey } from '@/lib/translations';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 import { MapPin, Calendar, ArrowRight, FileCheck, Truck, Shield } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -209,57 +208,30 @@ export default function CasePage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {exportCases.map((item, index) => (
-              <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-                {/* Image */}
+              <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
+                {/* Image with Location & Date overlay */}
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={caseImages[index]}
-                    alt={t(item.titleKey)}
+                    alt={`${t(item.cityKey)}, ${item.country}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <Badge className="absolute top-4 left-4 bg-blue-900">
-                    {t(item.categoryKey)}
-                  </Badge>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <h3 className="text-lg font-bold text-white mb-3">
-                      {t(item.titleKey)}
-                    </h3>
-                    {/* Location and Date - Left/Right Layout */}
-                    <div className="flex justify-between items-center text-white/90 text-sm bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
-                      <span className="flex items-center gap-1.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                  {/* Location and Date - Left/Right Layout */}
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <div className="flex justify-between items-center text-white text-sm bg-white/15 backdrop-blur-md rounded-lg px-4 py-3">
+                      <span className="flex items-center gap-2">
                         <MapPin className="w-4 h-4 text-orange-400" />
                         <span>{t(item.cityKey)}, {item.country}</span>
                       </span>
-                      <span className="flex items-center gap-1.5">
+                      <span className="flex items-center gap-2">
                         <Calendar className="w-4 h-4 text-orange-400" />
                         <span>{item.date}</span>
                       </span>
                     </div>
                   </div>
                 </div>
-
-                {/* Content */}
-                <CardContent className="p-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <div>
-                      <div className="text-xs text-slate-500">{t('car_model')}</div>
-                      <div className="font-semibold text-sm text-slate-900">{item.carModel}</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-xs text-slate-500">{t('export_quantity')}</div>
-                      <div className="font-bold text-xl text-blue-900">{item.quantity}</div>
-                    </div>
-                  </div>
-                  <p className="text-slate-600 text-xs line-clamp-2 mb-3">
-                    {t(item.descriptionKey)}
-                  </p>
-                  <Button variant="ghost" size="sm" className="w-full justify-between text-blue-900 hover:text-blue-700 hover:bg-blue-50">
-                    {t('details')}
-                    <ArrowRight className="w-4 h-4" />
-                  </Button>
-                </CardContent>
               </Card>
             ))}
           </div>
