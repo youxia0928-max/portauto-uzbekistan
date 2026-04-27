@@ -93,33 +93,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* History Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="order-2 lg:order-1 relative h-[400px] rounded-2xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80"
-                alt="Company history"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="order-1 lg:order-2">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6">
-                <History className="w-8 h-8 text-orange-500" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                {t('history')}
-              </h2>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                {t('history_text')}
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Values Section */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
