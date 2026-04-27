@@ -6,7 +6,7 @@ import { MessageCircle } from 'lucide-react';
 export default function WhatsAppButton() {
   const { t } = useLanguage();
   
-  const whatsappNumber = '+998901234567'; // 示例号码，需要替换为实际号码
+  const whatsappNumber = '+998888866685';
   const message = encodeURIComponent(t('whatsapp_message'));
   const whatsappUrl = `https://wa.me/${whatsappNumber.replace(/[^0-9]/g, '')}?text=${message}`;
 
