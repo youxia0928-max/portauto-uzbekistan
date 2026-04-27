@@ -3,7 +3,7 @@ import { Inspector } from 'react-dev-inspector';
 import { LanguageProvider } from '@/lib/useLanguage';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import WhatsAppButton from '@/components/WhatsAppButton';
+import WhatsAppButton from '@/components/TelegramButton';
 import './globals.css';
 
 export const metadata: Metadata = {

@@ -52,7 +52,9 @@ export default function NewsSection() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {/* Telegram */}
             <a 
-              href="#" 
+              href="https://t.me/uzauto_ray" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-slate-50 rounded-2xl p-6 text-center hover:bg-blue-50 transition-colors group"
             >
               <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
@@ -61,12 +63,14 @@ export default function NewsSection() {
                 </svg>
               </div>
               <h3 className="font-bold text-slate-900 mb-1">{t('telegram')}</h3>
-              <p className="text-slate-600 text-sm">@portauto</p>
+              <p className="text-slate-600 text-sm">@uzauto_ray</p>
             </a>
 
             {/* WhatsApp */}
             <a 
-              href="#" 
+              href="https://wa.me/998888866685" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-slate-50 rounded-2xl p-6 text-center hover:bg-green-50 transition-colors group"
             >
               <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
@@ -75,12 +79,14 @@ export default function NewsSection() {
                 </svg>
               </div>
               <h3 className="font-bold text-slate-900 mb-1">{t('whatsapp_label')}</h3>
-              <p className="text-slate-600 text-sm">+86 138-0013-8000</p>
+              <p className="text-slate-600 text-sm">+998 888866685</p>
             </a>
 
             {/* Facebook */}
             <a 
-              href="#" 
+              href="https://www.facebook.com/profile.php?id=61569233188997" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-slate-50 rounded-2xl p-6 text-center hover:bg-blue-50 transition-colors group"
             >
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
