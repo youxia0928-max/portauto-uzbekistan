@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
-// 12个案例图片 - 使用案例页面本地图片
+// 6个案例图片 - 使用案例页面本地图片
 const caseImages = [
   '/case-images/1.webp',
   '/case-images/2.webp',
@@ -17,12 +17,6 @@ const caseImages = [
   '/case-images/4.webp',
   '/case-images/5.webp',
   '/case-images/6.webp',
-  '/case-images/7.webp',
-  '/case-images/8.webp',
-  '/case-images/9.webp',
-  '/case-images/10.webp',
-  '/case-images/11.webp',
-  '/case-images/12.webp',
 ];
 
 export default function HomePage() {
