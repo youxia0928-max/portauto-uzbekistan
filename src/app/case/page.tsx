@@ -1,6 +1,5 @@
 'use client';
 
-import { useState } from 'react';
 import { useLanguage } from '@/lib/useLanguage';
 import type { TranslationKey } from '@/lib/translations';
 import { Card, CardContent } from '@/components/ui/card';
@@ -85,15 +84,8 @@ const exportCases = [
   },
 ];
 
-const categories = ['all', 'new_energy', 'fuel_vehicles', 'luxury_vehicles'] as const;
-
 export default function CasePage() {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-
-  const filteredCases = activeCategory === 'all' 
-    ? exportCases 
-    : exportCases.filter(c => c.categoryKey === activeCategory);
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -109,29 +101,11 @@ export default function CasePage() {
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="py-8 bg-white border-b">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((cat) => (
-              <Button
-                key={cat}
-                variant={activeCategory === cat ? 'default' : 'outline'}
-                onClick={() => setActiveCategory(cat)}
-                className={activeCategory === cat ? 'bg-blue-900' : ''}
-              >
-                {cat === 'all' ? t('all') : t(cat)}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Cases Grid */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredCases.map((item) => (
+            {exportCases.map((item) => (
               <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
                 {/* Image */}
                 <div className="relative h-56 overflow-hidden">
