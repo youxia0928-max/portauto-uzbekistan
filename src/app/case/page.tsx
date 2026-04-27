@@ -302,7 +302,10 @@ export default function CasePage() {
       {/* Stats Images Section */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img src="/stats/stat-new.webp" alt="Stat 1" className="w-full h-64 object-cover" />
+            </div>
             <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <img src="/stats/stat-2.webp" alt="Stat 2" className="w-full h-64 object-cover" />
             </div>
