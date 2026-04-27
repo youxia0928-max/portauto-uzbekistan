@@ -101,6 +101,11 @@ export const translations = {
     your_message: 'Ваше сообщение',
     submit: 'Отправить',
     success_message: 'Сообщение отправлено! Мы свяжемся с вами в ближайшее время.',
+    leave_request: 'Оставить заявку',
+    social_media: 'Мы в социальных сетях',
+    telegram: 'Telegram',
+    whatsapp_label: 'WhatsApp',
+    facebook: 'Facebook',
     
     // 统计
     stats_warehouse: '仓库',
@@ -231,6 +236,11 @@ export const translations = {
     your_message: 'Your Message',
     submit: 'Submit',
     success_message: 'Message sent! We will contact you shortly.',
+    leave_request: 'Leave a Request',
+    social_media: 'Follow Us',
+    telegram: 'Telegram',
+    whatsapp_label: 'WhatsApp',
+    facebook: 'Facebook',
     
     // Stats
     stats_warehouse: 'Warehouse',
@@ -361,6 +371,11 @@ export const translations = {
     your_message: '您的留言',
     submit: '提交',
     success_message: '消息已发送！我们会尽快与您联系。',
+    leave_request: '填写表单',
+    social_media: '关注我们',
+    telegram: 'Telegram',
+    whatsapp_label: 'WhatsApp',
+    facebook: 'Facebook',
     
     // 统计
     stats_warehouse: '仓库',
