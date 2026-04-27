@@ -279,6 +279,26 @@ export default function CasePage() {
         </div>
       </section>
 
+      {/* CTA Section - All Models Banner */}
+      <section 
+        className="py-24 bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: 'linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url(/case-images/1.webp)' }}
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+            {t('all_models_you_want')}
+          </h2>
+          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto">
+            {t('contact_us_desc')}
+          </p>
+          <Link href="/contact">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+              {t('contact_us')}
+            </Button>
+          </Link>
+        </div>
+      </section>
+
       {/* Stats Images Section */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
