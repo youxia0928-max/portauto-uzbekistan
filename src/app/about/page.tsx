@@ -34,14 +34,17 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 py-20">
+      {/* Hero Section with Background */}
+      <section 
+        className="relative bg-cover bg-center bg-no-repeat py-24 md:py-32"
+        style={{ backgroundImage: 'linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url(/about-bg.webp)' }}
+      >
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight">
               {t('about_title')}
             </h1>
-            <p className="text-xl text-slate-200">
+            <p className="text-lg md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               {t('about_subtitle')}
             </p>
           </div>
