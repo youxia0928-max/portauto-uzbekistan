@@ -108,32 +108,102 @@ export const translations = {
     facebook: 'Facebook',
     
     // 统计
-    stats_warehouse: '仓库',
-    stats_car_source: '车源',
-    stats_sale_country: '销售国家',
+    stats_warehouse: 'Склад',
+    stats_car_source: 'Источник авто',
+    stats_sale_country: 'Страны продаж',
     
     // 三步流程
-    how_it_works: '如何运作',
-    step1_title: '获取报价',
-    step1_desc: '告诉我们您想要的车型，我们提供最优价格',
-    step2_title: '运输安排',
-    step2_desc: '专业物流团队确保安全快速运输',
-    step3_title: '收车验收',
-    step3_desc: '验车满意后付款，售后无忧',
+    how_it_works: 'Как это работает',
+    step1_title: 'Получить предложение',
+    step1_desc: 'Расскажите нам о нужной модели авто, мы предложим лучшую цену',
+    step2_title: 'Организация перевозки',
+    step2_desc: 'Профессиональная команда логистики обеспечит безопасную и быструю транспортировку',
+    step3_title: 'Получение и проверка',
+    step3_desc: 'Проверьте автомобиль и оплатите, послепродажное обслуживание без забот',
+    
+    // Hero
+    sales_quality: 'КАЧЕСТВО ПРОДАЖ',
+    choose_partner: 'Выберите правильного партнера один раз, и избавьте себя от всех проблем!',
+    contact_us: 'СВЯЗАТЬСЯ С НАМИ',
+    step1_process: 'ПОЛУЧИТЬ КОТИРОВКУ',
+    step2_process: 'ТРАНСПОРТИРОВКА',
+    step3_process: 'ПОЛУЧИТЬ',
+    
+    // About Us (HowItWorks)
+    about_intro: 'PortAuto — профессиональная компания по экспорту автомобилей из Китая, предоставляющая полный спектр решений по закупке автомобилей для клиентов по всему миру. Мы специализируемся на экспорте традиционных автомобилей с бензиновым двигателем и новейших электромобилей на рынки Центральной Азии, Ближнего Востока, России и Африки.',
+    what_we_offer: 'Что мы предлагаем:',
+    gasoline_vehicles: 'Автомобили с бензиновым двигателем:',
+    gasoline_vehicles_desc: 'Мы поставляем автомобили совместных предприятий китайского производства и автомобили на топливе высшего класса. Эти автомобили обладают тем же мировым качеством по гораздо более конкурентоспособной цене.',
+    energy_vehicles: 'Электромобили:',
+    energy_vehicles_desc: 'Мы также являемся ключевым экспортером электромобилей от Geely, BYD, Zeekr, Li Auto и GAC и других.',
+    supply_chain: 'Цепочка поставок:',
+    supply_chain_desc: 'Прямое сотрудничество с заводами гарантирует стабильные запасы автомобилей обоих типов.',
+    why_portauto: 'Почему PortAuto?',
+    why_portauto_desc: 'Ищете ли вы экономичный Toyota для автопарка или роскошный Geely SUV для перепродажи — PortAuto это ваш единый шлюз на китайский автомобильный рынок.',
+    more: 'Подробнее',
+    
+    // About page stats
+    cars_delivered: 'Доставлено автомобилей',
+    happy_customers: 'Довольных клиентов',
+    car_brands: 'Брендов автомобилей',
+    customer_support: 'Поддержка клиентов',
+    team: 'Наша команда',
+    team_description: 'Познакомьтесь с нашей командой экспертов...',
+    
+    // Footer
+    navigation: 'Навигация',
+    
+    // Case page
+    case_subtitle: 'Успешные кейсы - профессиональные услуги по экспорту автомобилей, связывающие китайские авто с мировым рынком',
+    all: 'Все',
+    new_energy: 'Новые энергетические',
+    fuel_vehicles: 'Топливные модели',
+    luxury_vehicles: 'Премиум модели',
+    car_model: 'Модель автомобиля',
+    export_quantity: 'Количество экспорта',
+    export_quantity_unit: 'ед.',
+    successful_cases: 'Успешные кейсы',
+    export_countries: 'Стран экспорта',
+    exported_vehicles: 'Экспортировано авто',
+    customer_satisfaction: 'Удовлетворенность клиентов',
+    start_export_project: 'Начните свой экспортный проект',
+    contact_for_quote: 'Свяжитесь с нами для получения профессиональной консультации и расценок',
+    consult_now: 'Консультация сейчас',
     
     // WhatsApp
-    whatsapp: 'WhatsApp咨询',
-    whatsapp_message: '您好，我想咨询汽车出口服务',
+    whatsapp: 'WhatsApp консультация',
+    whatsapp_message: 'Здравствуйте, хочу узнать об услугах экспорта автомобилей',
 
     // B2B出口服务
-    b2b_service: 'B2B汽车出口服务',
-    b2b_service_desc: '连接全球车源，专业的汽车出口一站式解决方案',
+    b2b_service: 'B2B услуги экспорта автомобилей',
+    b2b_service_desc: 'Связь мировых источников автомобилей, профессиональные решения для экспорта автомобилей',
     
     // 通用
     loading: 'Загрузка...',
     error: 'Ошибка',
     not_found: 'Не найдено',
     back_to_catalog: 'Назад к кейсам',
+    
+    // 案例数据
+    case_byd_seal: 'Экспорт BYD Seal в Узбекистан',
+    case_byd_seal_desc: 'Успешно завершен проект экспорта 50 автомобилей BYD Seal, отправленных из порта Шэньчжэнь и безопасно доставленных в Ташкент.',
+    case_aito_m9: 'Экспорт AITO M9 в Казахстан',
+    case_aito_m9_desc: 'Экспорт 30 внедорожников AITO M9, полное отслеживание логистики для обеспечения безопасной доставки.',
+    case_hongqi_ehs9: 'Экспорт Hongqi E-HS9 в Москву',
+    case_hongqi_ehs9_desc: 'Проект экспорта высококачественных электрических внедорожников, клиент высоко оценил качество и логистику.',
+    case_geely_xingyue: 'Экспорт Geely Xingyue L в Туркменистан',
+    case_geely_xingyue_desc: 'Успешный экспорт традиционных автомобилей, открытие канала на рынке Туркменистана.',
+    case_nio_es8: 'Экспорт NIO ES8 в Дубай',
+    case_nio_es8_desc: 'Экспорт высококачественных интеллектуальных электрических внедорожников на рынок Ближнего Востока.',
+    case_xpeng_g9: 'Экспорт XPENG G9 в Алматы',
+    case_xpeng_g9_desc: 'Партионный экспорт интеллектуальных электрических внедорожников с полной поддержкой послепродажного обслуживания.',
+    
+    // 城市
+    city_tashkent: 'Ташкент',
+    city_almaty: 'Алматы',
+    city_moscow: 'Москва',
+    city_ashgabat: 'Ашхабад',
+    city_dubai: 'Дубай',
   },
   en: {
     // Navigation
@@ -256,6 +326,55 @@ export const translations = {
     step3_title: 'Receive',
     step3_desc: 'Inspect the car, pay after satisfaction, worry-free after-sales',
     
+    // Hero
+    sales_quality: 'SALES QUALITY',
+    choose_partner: 'Choose the right partner once, and save yourself all the troubles!',
+    contact_us: 'CONTACT US',
+    step1_process: 'GET AN QUOTE',
+    step2_process: 'TRANSPORTATION',
+    step3_process: 'RECEIVE',
+    
+    // About Us (HowItWorks)
+    about_intro: 'PortAuto is a professional automotive export company based in China, providing a full range of vehicle sourcing solutions for global clients. We specialize in exporting both traditional Gasoline Vehicles and the latest New Energy Vehicles to markets including Central Asia, the Middle East, Russia, and Africa.',
+    what_we_offer: 'What We Offer:',
+    gasoline_vehicles: 'Gasoline Vehicles:',
+    gasoline_vehicles_desc: 'We supply China-manufactured joint venture models and top-tier Chinese domestic fuel cars. These vehicles offer the same global quality at a much more competitive price.',
+    energy_vehicles: 'Energy Vehicles:',
+    energy_vehicles_desc: 'We are also a key exporter of EVs from Geely, BYD, Zeekr, Li Auto, and GAC, etc.',
+    supply_chain: 'Supply Chain:',
+    supply_chain_desc: 'Direct cooperation with factories ensures we have stable stock of both petrol and electric cars.',
+    why_portauto: 'Why PortAuto?',
+    why_portauto_desc: 'Whether you are looking for a fuel-efficient Toyota for a taxi fleet or a luxury Geely SUV for resale, PortAuto is your one-stop gateway to the Chinese auto market.',
+    more: 'More',
+    
+    // About page stats
+    cars_delivered: 'Cars Delivered',
+    happy_customers: 'Happy Customers',
+    car_brands: 'Car Brands',
+    customer_support: 'Customer Support',
+    team: 'Our Team',
+    team_description: 'Meet our team of automotive experts dedicated to finding your perfect vehicle',
+    
+    // Footer
+    navigation: 'Navigation',
+    
+    // Case page
+    case_subtitle: 'Successful cases - professional car export services connecting Chinese cars to the global market',
+    all: 'All',
+    new_energy: 'New Energy',
+    fuel_vehicles: 'Fuel Vehicles',
+    luxury_vehicles: 'Luxury',
+    car_model: 'Car Model',
+    export_quantity: 'Export Quantity',
+    export_quantity_unit: 'units',
+    successful_cases: 'Successful Cases',
+    export_countries: 'Export Countries',
+    exported_vehicles: 'Exported Vehicles',
+    customer_satisfaction: 'Customer Satisfaction',
+    start_export_project: 'Start Your Export Project',
+    contact_for_quote: 'Contact us for professional consultation and quotes',
+    consult_now: 'Consult Now',
+    
     // WhatsApp
     whatsapp: 'WhatsApp Consultation',
     whatsapp_message: 'Hello, I would like to inquire about car export services',
@@ -269,6 +388,27 @@ export const translations = {
     error: 'Error',
     not_found: 'Not Found',
     back_to_catalog: 'Back to Cases',
+    
+    // Case data
+    case_byd_seal: 'BYD Seal Export to Uzbekistan',
+    case_byd_seal_desc: 'Successfully completed export of 50 BYD Seal vehicles, shipped from Shenzhen Port and safely delivered to Tashkent.',
+    case_aito_m9: 'AITO M9 Export to Kazakhstan',
+    case_aito_m9_desc: 'Export of 30 AITO M9 large SUVs with full logistics tracking to ensure safe delivery.',
+    case_hongqi_ehs9: 'Hongqi E-HS9 Export to Moscow',
+    case_hongqi_ehs9_desc: 'High-end electric SUV export project, customer highly satisfied with vehicle quality and logistics service.',
+    case_geely_xingyue: 'Geely Xingyue L Export to Turkmenistan',
+    case_geely_xingyue_desc: 'Successful fuel vehicle export, opening up Turkmenistan market channel.',
+    case_nio_es8: 'NIO ES8 Export to Dubai',
+    case_nio_es8_desc: 'High-end smart electric SUV export to Middle East market, promoting Chinese brand internationalization.',
+    case_xpeng_g9: 'XPENG G9 Export to Almaty',
+    case_xpeng_g9_desc: 'Batch export of smart electric SUVs with complete after-sales support.',
+    
+    // Cities
+    city_tashkent: 'Tashkent',
+    city_almaty: 'Almaty',
+    city_moscow: 'Moscow',
+    city_ashgabat: 'Ashgabat',
+    city_dubai: 'Dubai',
   },
   zh: {
     // 导航
@@ -391,6 +531,55 @@ export const translations = {
     step3_title: '收车验收',
     step3_desc: '验车满意后付款，售后无忧',
     
+    // Hero
+    sales_quality: '销售质量',
+    choose_partner: '一次选对合作伙伴，省去所有烦恼！',
+    contact_us: '联系我们',
+    step1_process: '获取报价',
+    step2_process: '运输',
+    step3_process: '收货',
+    
+    // 关于我们 (HowItWorks)
+    about_intro: 'PortAuto是一家专业的汽车出口公司，总部位于中国，为全球客户提供全方位的汽车采购解决方案。我们专注于出口传统燃油车和新能源汽车到中亚、中东、俄罗斯和非洲等市场。',
+    what_we_offer: '我们提供：',
+    gasoline_vehicles: '燃油车型：',
+    gasoline_vehicles_desc: '我们供应中国制造的合资车型和顶级国产燃油车。这些车型以更具竞争力的价格提供同样的全球品质。',
+    energy_vehicles: '新能源车型：',
+    energy_vehicles_desc: '我们也是吉利、比亚迪、极氪、理想、广汽等品牌电动汽车的主要出口商。',
+    supply_chain: '供应链：',
+    supply_chain_desc: '与工厂直接合作，确保燃油车和电动车都有稳定的库存。',
+    why_portauto: '为什么选择PortAuto？',
+    why_portauto_desc: '无论您是想为出租车队寻找省油的丰田，还是为转售寻找豪华的吉利SUV，PortAuto都是您进入中国汽车市场的最佳选择。',
+    more: '更多',
+    
+    // About page stats
+    cars_delivered: '已交付车辆',
+    happy_customers: '满意客户',
+    car_brands: '合作品牌',
+    customer_support: '客户支持',
+    team: '我们的团队',
+    team_description: '了解我们的汽车专家团队，致力于为您找到完美的车辆',
+    
+    // 页脚
+    navigation: '导航',
+    
+    // 案例页面
+    case_subtitle: '成功案例 - 连接中国汽车与国际市场的专业汽车出口服务',
+    all: '全部',
+    new_energy: '新能源汽车',
+    fuel_vehicles: '燃油车型',
+    luxury_vehicles: '高端车型',
+    car_model: '车型',
+    export_quantity: '出口数量',
+    export_quantity_unit: '台',
+    successful_cases: '成功案例',
+    export_countries: '出口国家',
+    exported_vehicles: '已出口车辆',
+    customer_satisfaction: '客户满意度',
+    start_export_project: '开始您的出口项目',
+    contact_for_quote: '联系我们获取专业咨询和报价',
+    consult_now: '立即咨询',
+    
     // WhatsApp
     whatsapp: 'WhatsApp咨询',
     whatsapp_message: '您好，我想咨询汽车出口服务',
@@ -404,6 +593,27 @@ export const translations = {
     error: '错误',
     not_found: '未找到',
     back_to_catalog: '返回案例',
+    
+    // 案例数据
+    case_byd_seal: '比亚迪海豹出口乌兹别克斯坦',
+    case_byd_seal_desc: '成功完成50台比亚迪海豹车型的出口项目，从深圳港发运，安全抵达塔什干。',
+    case_aito_m9: '问界M9新能源汽车出口哈萨克斯坦',
+    case_aito_m9_desc: '完成30台问界M9大型SUV的出口，全程物流跟踪，确保车辆安全交付。',
+    case_hongqi_ehs9: '红旗E-HS9出口俄罗斯莫斯科',
+    case_hongqi_ehs9_desc: '高端电动SUV出口项目，客户对车辆品质和物流服务高度认可。',
+    case_geely_xingyue: '吉利星越L出口土库曼斯坦',
+    case_geely_xingyue_desc: '传统燃油车型出口项目，成功打通土库曼斯坦市场渠道。',
+    case_nio_es8: '蔚来ES8出口阿联酋迪拜',
+    case_nio_es8_desc: '高端智能电动SUV出口至中东市场，助力中国品牌国际化。',
+    case_xpeng_g9: '小鹏G9出口哈萨克斯坦阿拉木图',
+    case_xpeng_g9_desc: '智能电动SUV批量出口，提供完善的售后服务支持。',
+    
+    // 城市
+    city_tashkent: '塔什干',
+    city_almaty: '阿拉木图',
+    city_moscow: '莫斯科',
+    city_ashgabat: '阿什哈巴德',
+    city_dubai: '迪拜',
   }
 } as const;
 

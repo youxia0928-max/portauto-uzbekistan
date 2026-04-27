@@ -26,10 +26,10 @@ export default function AboutPage() {
   ];
 
   const stats = [
-    { value: '5000+', label: 'Cars Delivered' },
-    { value: '3000+', label: 'Happy Customers' },
-    { value: '50+', label: 'Car Brands' },
-    { value: '24/7', label: 'Customer Support' },
+    { value: '5000+', label: t('cars_delivered') },
+    { value: '3000+', label: t('happy_customers') },
+    { value: '50+', label: t('car_brands') },
+    { value: '24/7', label: t('customer_support') },
   ];
 
   return (
@@ -159,10 +159,10 @@ export default function AboutPage() {
               <Users className="w-8 h-8 text-orange-500" />
             </div>
             <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              Our Team
+              {t('team')}
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Meet our team of automotive experts dedicated to finding your perfect vehicle
+              {t('team_description')}
             </p>
           </div>
 

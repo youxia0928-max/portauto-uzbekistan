@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="max-w-2xl">
           {/* Main Title */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            AUTO EXPORT SOLUTIONS
+            {t('hero_title')}
           </h1>
           
           {/* Rating Badge */}
@@ -48,17 +48,17 @@ export default function Hero() {
                 <Star key={i} className="w-5 h-5 text-yellow-400 fill-yellow-400" />
               ))}
             </div>
-            <span className="text-white/80 text-sm font-medium">SALES QUALITY</span>
+            <span className="text-white/80 text-sm font-medium">{t('sales_quality')}</span>
           </div>
           
           {/* Subtitle */}
           <p className="text-lg md:text-xl text-white/90 mb-4 font-medium">
-            {t('b2b_service_desc')}
+            {t('hero_subtitle')}
           </p>
           
           {/* Tagline */}
           <p className="text-white/70 mb-8 text-sm md:text-base">
-            Choose the right partner once, and save yourself all the troubles!
+            {t('choose_partner')}
           </p>
           
           {/* CTA Button */}
@@ -67,7 +67,7 @@ export default function Hero() {
               size="lg"
               className="bg-white text-slate-900 hover:bg-slate-100 px-10"
             >
-              CONTACT US
+              {t('contact_us')}
             </Button>
           </Link>
         </div>
@@ -77,19 +77,19 @@ export default function Hero() {
           <div className="flex items-center gap-4">
             <span className="text-3xl font-bold text-white/40">1</span>
             <span className="text-lg font-semibold text-white border-t border-white/30 pt-2">
-              GET AN QUOTE
+              {t('step1_process')}
             </span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-3xl font-bold text-white/40">2</span>
             <span className="text-lg font-semibold text-white border-t border-white/30 pt-2">
-              TRANSPORTATION
+              {t('step2_process')}
             </span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-3xl font-bold text-white/40">3</span>
             <span className="text-lg font-semibold text-white border-t border-white/30 pt-2">
-              RECEIVE
+              {t('step3_process')}
             </span>
           </div>
         </div>
