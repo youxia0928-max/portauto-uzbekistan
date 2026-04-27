@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useLanguage } from '@/lib/useLanguage';
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
@@ -64,15 +64,18 @@ export default function ContactPage() {
     setIsSubmitting(true);
     
     try {
+      // 使用 no-cors 模式提交到 Google Sheets
+      // 由于 no-cors 无法获取响应，提交后直接显示成功提示
       await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors', // Google Apps Script不支持CORS
+        mode: 'no-cors',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
       
+      // 提交后立即显示成功提示
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', message: '' });
       setTimeout(() => setSubmitted(false), 3000);
@@ -201,9 +204,18 @@ export default function ContactPage() {
                     required
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-blue-900 hover:bg-blue-800">
-                  <Send className="w-4 h-4 mr-2" />
-                  {t('submit')}
+                <Button type="submit" size="lg" className="w-full bg-blue-900 hover:bg-blue-800" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      {t('loading')}
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 mr-2" />
+                      {t('submit')}
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
