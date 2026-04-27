@@ -65,19 +65,19 @@ export default function Header() {
               variant="ghost"
               size="sm"
               onClick={cycleLanguage}
-              className="flex items-center space-x-1"
+              className="flex items-center space-x-1 text-white hover:text-orange-400"
             >
-              <Globe className="w-4 h-4" />
-              <span className="text-sm font-medium">{getCurrentLanguageLabel()}</span>
+              <Globe className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">{getCurrentLanguageLabel()}</span>
             </Button>
 
             <Button
               variant="ghost"
               size="sm"
-              className="md:hidden"
+              className="md:hidden text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
             </Button>
           </div>
         </div>
