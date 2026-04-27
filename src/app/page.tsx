@@ -9,53 +9,20 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
-// 9个案例图片
+// 12个案例图片 - 使用案例页面本地图片
 const caseImages = [
-  {
-    id: 1,
-    title: '新能源汽车出口',
-    image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=600&h=400&fit=crop',
-  },
-  {
-    id: 2,
-    title: '港口物流调度',
-    image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&h=400&fit=crop',
-  },
-  {
-    id: 3,
-    title: '跨境运输服务',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop',
-  },
-  {
-    id: 4,
-    title: '仓储管理',
-    image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=400&fit=crop',
-  },
-  {
-    id: 5,
-    title: '出口报关服务',
-    image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=600&h=400&fit=crop',
-  },
-  {
-    id: 6,
-    title: '车队运输',
-    image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&h=400&fit=crop',
-  },
-  {
-    id: 7,
-    title: '智能物流系统',
-    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=400&fit=crop',
-  },
-  {
-    id: 8,
-    title: '全球配送网络',
-    image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=400&fit=crop',
-  },
-  {
-    id: 9,
-    title: '专业售后服务',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop',
-  },
+  '/case-images/1.webp',
+  '/case-images/2.webp',
+  '/case-images/3.webp',
+  '/case-images/4.webp',
+  '/case-images/5.webp',
+  '/case-images/6.webp',
+  '/case-images/7.webp',
+  '/case-images/8.webp',
+  '/case-images/9.webp',
+  '/case-images/10.webp',
+  '/case-images/11.webp',
+  '/case-images/12.webp',
 ];
 
 export default function HomePage() {
@@ -81,24 +48,18 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 9 Images Grid - 3x3 */}
+          {/* 12 Images Grid - 3x4 */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-            {caseImages.map((item) => (
+            {caseImages.map((image, index) => (
               <div
-                key={item.id}
-                className="relative group overflow-hidden rounded-lg aspect-[3/2] cursor-pointer"
+                key={index}
+                className="relative group overflow-hidden rounded-lg aspect-[4/3] cursor-pointer"
               >
                 <img
-                  src={item.image}
-                  alt={item.title}
+                  src={image}
+                  alt={`Case ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                {/* Title */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white font-semibold text-lg">{item.title}</h3>
-                </div>
               </div>
             ))}
           </div>
