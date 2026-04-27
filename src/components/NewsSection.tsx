@@ -5,6 +5,9 @@ import { useLanguage } from '@/lib/useLanguage';
 import { Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+// Google Apps Script Web应用地址
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzG83YAkdbg_AKwCF_4w5QqaWWiJcX7yLIpVcrWc8ZMRF8Knzv104v-zStC_RsnfUE_1g/exec';
+
 export default function NewsSection() {
   const { t } = useLanguage();
   const [formData, setFormData] = useState({
@@ -15,17 +18,29 @@ export default function NewsSection() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Google Apps Script不支持CORS
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
       setSubmitted(true);
       setFormData({ name: '', phone: '', message: '' });
-      
       setTimeout(() => setSubmitted(false), 3000);
-    }, 1000);
+    } catch (error) {
+      console.error('提交失败:', error);
+      alert('提交失败，请稍后重试');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
