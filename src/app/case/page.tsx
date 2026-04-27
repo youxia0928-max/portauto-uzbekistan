@@ -250,20 +250,31 @@ export default function CasePage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {customsServices.map((service, index) => (
-              <div key={index} className="bg-slate-50 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <service.icon className="w-8 h-8 text-blue-900" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="/customs.webp"
+                alt="Customs Clearance"
+                className="w-full h-auto"
+              />
+            </div>
+            <div className="space-y-6">
+              {customsServices.map((service, index) => (
+                <div key={index} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                    <service.icon className="w-6 h-6 text-blue-900" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-1">
+                      {t(service.title as TranslationKey)}
+                    </h3>
+                    <p className="text-slate-600 text-sm">
+                      {t(service.desc as TranslationKey)}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-2">
-                  {t(service.title as TranslationKey)}
-                </h3>
-                <p className="text-slate-600">
-                  {t(service.desc as TranslationKey)}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
