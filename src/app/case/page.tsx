@@ -299,44 +299,20 @@ export default function CasePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
+      {/* Stats Images Section */}
+      <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-900 mb-2">500+</div>
-              <div className="text-slate-600">{t('successful_cases')}</div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img src="/stats/stat-1.webp" alt="Stat 1" className="w-full h-64 object-cover" />
             </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-900 mb-2">15+</div>
-              <div className="text-slate-600">{t('export_countries')}</div>
+            <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img src="/stats/stat-2.webp" alt="Stat 2" className="w-full h-64 object-cover" />
             </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-900 mb-2">3000+</div>
-              <div className="text-slate-600">{t('exported_vehicles')}</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-900 mb-2">98%</div>
-              <div className="text-slate-600">{t('customer_satisfaction')}</div>
+            <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+              <img src="/stats/stat-3.webp" alt="Stat 3" className="w-full h-64 object-cover" />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-800">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            {t('start_export_project')}
-          </h2>
-          <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
-            {t('contact_for_quote')}
-          </p>
-          <Link href="/contact">
-            <Button size="lg" variant="secondary">
-              {t('consult_now')}
-            </Button>
-          </Link>
         </div>
       </section>
     </div>
