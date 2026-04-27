@@ -45,9 +45,9 @@ export default function Header() {
             <Image 
               src="/logo-new.webp" 
               alt="PortAuto Uzbekistan" 
-              width={80} 
-              height={80}
-              className="object-contain"
+              width={56} 
+              height={42}
+              className="object-contain h-auto w-auto"
             />
           </Link>
 
