@@ -204,6 +204,18 @@ export const translations = {
     city_moscow: 'Москва',
     city_ashgabat: 'Ашхабад',
     city_dubai: 'Дубай',
+    
+    // 新增
+    client_cases: 'Кейсы клиентов',
+    customs_clearance: 'Таможенное оформление',
+    customs_clearance_desc: 'Профессиональные услуги таможенного оформления, быстрое и эффективное оформление документов',
+    all_models_you_want: 'У НАС ЕСТЬ ВСЕ МОДЕЛИ, КОТОРЫЕ ВЫ ХОТИТЕ',
+    customs_documents: 'Документы и оформление',
+    customs_documents_desc: 'Подготовка и оформление всех необходимых таможенных документов',
+    customs_compliance: 'Таможенное соответствие',
+    customs_compliance_desc: 'Гарантия соблюдения всех таможенных норм и требований',
+    customs_delivery: 'Быстрая доставка',
+    customs_delivery_desc: 'Эффективная логистика и быстрая доставка после оформления',
   },
   en: {
     // Navigation
@@ -409,6 +421,18 @@ export const translations = {
     city_moscow: 'Moscow',
     city_ashgabat: 'Ashgabat',
     city_dubai: 'Dubai',
+    
+    // New
+    client_cases: 'Client Cases',
+    customs_clearance: 'Customs Clearance',
+    customs_clearance_desc: 'Professional customs clearance services, fast and efficient documentation',
+    all_models_you_want: 'WE HAVE ALL THE MODELS YOU WANT',
+    customs_documents: 'Documents & Processing',
+    customs_documents_desc: 'Preparation and processing of all necessary customs documents',
+    customs_compliance: 'Customs Compliance',
+    customs_compliance_desc: 'Guarantee compliance with all customs regulations and requirements',
+    customs_delivery: 'Fast Delivery',
+    customs_delivery_desc: 'Efficient logistics and quick delivery after clearance',
   },
   zh: {
     // 导航
@@ -614,6 +638,18 @@ export const translations = {
     city_moscow: '莫斯科',
     city_ashgabat: '阿什哈巴德',
     city_dubai: '迪拜',
+    
+    // 新增
+    client_cases: '客户案例',
+    customs_clearance: '清关能力',
+    customs_clearance_desc: '专业清关服务，快速高效办理各类手续文件',
+    all_models_you_want: '我们拥有您想要的所有车型',
+    customs_documents: '单证办理',
+    customs_documents_desc: '准备和办理所有必要的清关单证文件',
+    customs_compliance: '合规保障',
+    customs_compliance_desc: '确保符合所有海关法规和要求',
+    customs_delivery: '快速交付',
+    customs_delivery_desc: '高效物流，清关后快速交付',
   }
 } as const;
 

@@ -4,7 +4,7 @@ import { useLanguage } from '@/lib/useLanguage';
 import type { TranslationKey } from '@/lib/translations';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { MapPin, Calendar, ArrowRight } from 'lucide-react';
+import { MapPin, Calendar, ArrowRight, CheckCircle, FileCheck, Truck, Shield } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
@@ -84,6 +84,24 @@ const exportCases = [
   },
 ];
 
+const customsServices = [
+  {
+    icon: FileCheck,
+    title: 'customs_documents',
+    desc: 'customs_documents_desc',
+  },
+  {
+    icon: Shield,
+    title: 'customs_compliance',
+    desc: 'customs_compliance_desc',
+  },
+  {
+    icon: Truck,
+    title: 'customs_delivery',
+    desc: 'customs_delivery_desc',
+  },
+];
+
 export default function CasePage() {
   const { t } = useLanguage();
 
@@ -93,7 +111,7 @@ export default function CasePage() {
       <section className="bg-gradient-to-r from-blue-900 to-blue-800 py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            {t('case')}
+            {t('client_cases')}
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
             {t('case_subtitle')}
@@ -156,6 +174,50 @@ export default function CasePage() {
               </Card>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Customs Clearance Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">
+              {t('customs_clearance')}
+            </h2>
+            <p className="text-slate-600 max-w-2xl mx-auto">
+              {t('customs_clearance_desc')}
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {customsServices.map((service, index) => (
+              <div key={index} className="bg-slate-50 rounded-xl p-8 text-center hover:shadow-lg transition-shadow">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <service.icon className="w-8 h-8 text-blue-900" />
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-2">
+                  {t(service.title as TranslationKey)}
+                </h3>
+                <p className="text-slate-600">
+                  {t(service.desc as TranslationKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Models Section */}
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-blue-800">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
+            {t('all_models_you_want')}
+          </h2>
+          <Link href="/contact">
+            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-10">
+              {t('contact_us')}
+            </Button>
+          </Link>
         </div>
       </section>
 
