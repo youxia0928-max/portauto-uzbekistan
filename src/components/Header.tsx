@@ -41,9 +41,9 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <Image src="/logo.webp" alt="AutoUzbek" width={120} height={40} className="h-10 w-auto" />
-            <span className="text-2xl font-bold text-black">UZ</span>
+          <Link href="/" className="flex items-end space-x-1">
+            <Image src="/logo.webp" alt="AutoUzbek" width={100} height={40} className="h-8 w-auto" />
+            <span className="text-sm font-bold text-black pb-0.5">UZ</span>
           </Link>
 
           {/* Desktop Navigation */}
