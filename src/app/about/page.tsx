@@ -44,17 +44,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* About Intro Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-lg md:text-xl text-slate-700 leading-relaxed">
-              <span className="font-bold text-blue-900">PortAuto</span> {t('about_intro')}
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Mission Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
