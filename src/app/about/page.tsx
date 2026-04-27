@@ -51,32 +51,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mb-6">
-                <Target className="w-8 h-8 text-orange-500" />
-              </div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-4">
-                {t('mission')}
-              </h2>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                {t('mission_text')}
-              </p>
-            </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden">
-              <img
-                src="/about-bg.webp"
-                alt="About Portauto"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Stats Section */}
       <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4">
