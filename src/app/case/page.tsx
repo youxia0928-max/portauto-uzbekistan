@@ -24,14 +24,23 @@ const caseImages = [
   '/case-images/12.webp',
 ];
 
-// Case data
+// Helper function to generate random date between 2022-01 and 2026-02
+function getRandomDate(): string {
+  const startDate = new Date(2022, 0, 1); // 2022-01-01
+  const endDate = new Date(2026, 1, 28); // 2026-02-28
+  const randomTime = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
+  const randomDate = new Date(randomTime);
+  return randomDate.toISOString().split('T')[0];
+}
+
+// Case data with random dates in 2022-2026 February range
 const exportCases = [
   {
     id: 1,
     titleKey: 'case_1_title' as TranslationKey,
     country: '乌兹别克斯坦',
     cityKey: 'city_tashkent' as TranslationKey,
-    date: '2024-12-15',
+    date: '2023-02-15',
     carModel: 'BYD Seal 2024',
     quantity: 50,
     categoryKey: 'new_energy' as TranslationKey,
@@ -42,7 +51,7 @@ const exportCases = [
     titleKey: 'case_2_title' as TranslationKey,
     country: '哈萨克斯坦',
     cityKey: 'city_almaty' as TranslationKey,
-    date: '2024-11-20',
+    date: '2024-02-20',
     carModel: 'AITO M9 2024',
     quantity: 30,
     categoryKey: 'new_energy' as TranslationKey,
@@ -53,7 +62,7 @@ const exportCases = [
     titleKey: 'case_3_title' as TranslationKey,
     country: '俄罗斯',
     cityKey: 'city_moscow' as TranslationKey,
-    date: '2024-10-28',
+    date: '2022-02-10',
     carModel: 'Hongqi E-HS9 2024',
     quantity: 25,
     categoryKey: 'luxury_vehicles' as TranslationKey,
@@ -64,7 +73,7 @@ const exportCases = [
     titleKey: 'case_4_title' as TranslationKey,
     country: '土库曼斯坦',
     cityKey: 'city_ashgabat' as TranslationKey,
-    date: '2024-09-15',
+    date: '2025-02-28',
     carModel: 'Geely Xingyue L 2024',
     quantity: 40,
     categoryKey: 'fuel_vehicles' as TranslationKey,
@@ -75,7 +84,7 @@ const exportCases = [
     titleKey: 'case_5_title' as TranslationKey,
     country: '阿联酋',
     cityKey: 'city_dubai' as TranslationKey,
-    date: '2024-08-22',
+    date: '2023-02-08',
     carModel: 'NIO ES8 2024',
     quantity: 20,
     categoryKey: 'new_energy' as TranslationKey,
@@ -86,7 +95,7 @@ const exportCases = [
     titleKey: 'case_6_title' as TranslationKey,
     country: '哈萨克斯坦',
     cityKey: 'city_almaty' as TranslationKey,
-    date: '2024-07-10',
+    date: '2026-02-12',
     carModel: 'XPENG G9 2024',
     quantity: 35,
     categoryKey: 'new_energy' as TranslationKey,
@@ -97,7 +106,7 @@ const exportCases = [
     titleKey: 'case_7_title' as TranslationKey,
     country: '乌兹别克斯坦',
     cityKey: 'city_tashkent' as TranslationKey,
-    date: '2024-06-18',
+    date: '2024-02-05',
     carModel: 'BYD Han 2024',
     quantity: 45,
     categoryKey: 'new_energy' as TranslationKey,
@@ -108,7 +117,7 @@ const exportCases = [
     titleKey: 'case_8_title' as TranslationKey,
     country: '俄罗斯',
     cityKey: 'city_moscow' as TranslationKey,
-    date: '2024-05-25',
+    date: '2022-02-25',
     carModel: 'Li Auto L9 2024',
     quantity: 28,
     categoryKey: 'luxury_vehicles' as TranslationKey,
@@ -119,7 +128,7 @@ const exportCases = [
     titleKey: 'case_9_title' as TranslationKey,
     country: '哈萨克斯坦',
     cityKey: 'city_almaty' as TranslationKey,
-    date: '2024-04-12',
+    date: '2025-02-18',
     carModel: 'Zeekr 001 2024',
     quantity: 32,
     categoryKey: 'new_energy' as TranslationKey,
@@ -130,7 +139,7 @@ const exportCases = [
     titleKey: 'case_10_title' as TranslationKey,
     country: '土库曼斯坦',
     cityKey: 'city_ashgabat' as TranslationKey,
-    date: '2024-03-08',
+    date: '2023-02-22',
     carModel: 'Changan CS75 Plus',
     quantity: 38,
     categoryKey: 'fuel_vehicles' as TranslationKey,
@@ -141,7 +150,7 @@ const exportCases = [
     titleKey: 'case_11_title' as TranslationKey,
     country: '阿联酋',
     cityKey: 'city_dubai' as TranslationKey,
-    date: '2024-02-15',
+    date: '2026-02-02',
     carModel: 'BYD Yangwang U8',
     quantity: 15,
     categoryKey: 'luxury_vehicles' as TranslationKey,
@@ -152,7 +161,7 @@ const exportCases = [
     titleKey: 'case_12_title' as TranslationKey,
     country: '俄罗斯',
     cityKey: 'city_moscow' as TranslationKey,
-    date: '2024-01-20',
+    date: '2024-02-14',
     carModel: 'Exeed揽月 2024',
     quantity: 22,
     categoryKey: 'luxury_vehicles' as TranslationKey,
@@ -212,19 +221,20 @@ export default function CasePage() {
                   <Badge className="absolute top-4 left-4 bg-blue-900">
                     {t(item.categoryKey)}
                   </Badge>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-lg font-bold text-white mb-1">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <h3 className="text-lg font-bold text-white mb-3">
                       {t(item.titleKey)}
                     </h3>
-                    <div className="flex items-center gap-4 text-sm text-white/90">
-                      <span className="flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {t(item.cityKey)}, {item.country}
+                    {/* Location and Date - Left/Right Layout */}
+                    <div className="flex justify-between items-center text-white/90 text-sm bg-white/10 backdrop-blur-sm rounded-lg px-3 py-2">
+                      <span className="flex items-center gap-1.5">
+                        <MapPin className="w-4 h-4 text-orange-400" />
+                        <span>{t(item.cityKey)}, {item.country}</span>
                       </span>
-                      <span className="flex items-center gap-1">
-                        <Calendar className="w-4 h-4" />
-                        {item.date}
+                      <span className="flex items-center gap-1.5">
+                        <Calendar className="w-4 h-4 text-orange-400" />
+                        <span>{item.date}</span>
                       </span>
                     </div>
                   </div>
