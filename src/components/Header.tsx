@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLanguage } from '@/lib/useLanguage';
 import { Menu, X, Globe } from 'lucide-react';
 import { useState } from 'react';
@@ -40,14 +41,14 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-blue-900 to-blue-700 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">A</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold text-white">Auto</span>
-              <span className="text-xl font-bold text-orange-400">Uzbek</span>
-            </div>
+          <Link href="/" className="flex items-center">
+            <Image 
+              src="/logo-new.webp" 
+              alt="PortAuto Uzbekistan" 
+              width={80} 
+              height={80}
+              className="object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
