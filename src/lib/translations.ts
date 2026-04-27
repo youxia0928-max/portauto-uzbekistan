@@ -72,6 +72,7 @@ export const translations = {
     
     // 关于我们
     about_title: 'О компании',
+    about_intro: 'ЯВЛЯЕТСЯ ЗАРУБЕЖНОЙ ПЛАТФОРМОЙ ПО ЗАКУПКЕ АВТОМОБИЛЕЙ, ПРИНАДЛЕЖАЩЕЙ КОМПАНИИ "MAIHAOCHE", СПЕЦИАЛИЗИРУЮЩЕЙСЯ НА ЭКСПОРТЕ АВТОМОБИЛЕЙ. МЫ СТРЕМИМСЯ ПРЕДОСТАВЛЯТЬ КЛИЕНТАМ ПО ВСЕМУ МИРУ КАЧЕСТВЕННЫЕ КИТАЙСКИЕ АВТОМОБИЛЬНЫЕ РЕСУРСЫ И ПРОФЕССИОНАЛЬНЫЕ УСЛУГИ ПО ЭКСПОРТУ.',
     about_subtitle: 'ОПИРАЯСЬ НА ГЛОБАЛЬНУЮ ЦЕПОЧКУ ПОСТАВОК, МЫ БЕСШОВНО СВЯЗЫВАЕМ ВАС С ЛУЧШИМИ АВТОМОБИЛЬНЫМИ РЕСУРСАМИ МИРА —— ДОБРО ПОЖАЛОВАТЬ В PORTAUTO UZBEKISTAN. РАЗРУШАЕМ БАРЬЕРЫ И ДОСТАВЛЯЕМ ЛУЧШИЕ АВТОМОБИЛИ СО ВСЕГО МИРА ПРЯМО В ТАШКЕНТ.',
     mission: 'Наша миссия',
     mission_text: 'НАШИ ОСНОВНЫЕ КОНКУРЕНТНЫЕ ПРЕИМУЩЕСТВА ЗАКЛЮЧАЮТСЯ В СПОСОБНОСТИ ТОЧНО ОПРЕДЕЛЯТЬ ВАШИ КЛЮЧЕВЫЕ БОЛЕВЫЕ ТОЧКИ НА ПРОТЯЖЕНИИ ВСЕГО ПРОЦЕССА ЗАКУПКИ АВТОМОБИЛЕЙ, ИХ ТРАНСПОРТИРОВКИ И ПРОДАЖИ НА МЕСТЕ.',
@@ -317,6 +318,7 @@ export const translations = {
     // About us
     about_title: 'About Us',
     about_subtitle: 'Relying on the global supply chain, we seamlessly connect you with the world\'s top vehicle resources —— Welcome to Portauto Uzbekistan. Breaking barriers, delivering the best cars from around the world straight to Tashkent.',
+    about_intro: 'is an overseas vehicle sourcing platform under "Maihaoche", specializing in automotive export business. We are committed to providing global customers with quality Chinese automotive resources and professional export services.',
     mission: 'Our Mission',
     mission_text: 'Our core competitiveness lies in our ability to accurately address your key pain points throughout the entire process of vehicle procurement, transportation, and on-site sales.',
     history: 'Our History',
@@ -560,6 +562,7 @@ export const translations = {
     
     // 关于我们
     about_title: '关于我们',
+    about_intro: '是"卖好车"旗下专注于汽车出口业务的海外车源平台，致力于为全球客户提供优质的中国汽车资源和专业的出口服务。',
     about_subtitle: '依托全球供应链，为您无缝对接顶尖车源 —— 欢迎来到 Portauto Uzbekistan。打破壁垒，让全球一手好车直达塔什干。',
     mission: '我们的使命',
     mission_text: '我们的核心竞争力在于能够准确把握您在整车采购、运输及现场销售全流程中的关键痛点。',
