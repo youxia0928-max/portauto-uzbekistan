@@ -1,8 +1,6 @@
 'use client';
 
 import { useLanguage } from '@/lib/useLanguage';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 export default function AboutUs() {
   const { t } = useLanguage();
@@ -76,14 +74,9 @@ export default function AboutUs() {
             <h3 className="text-2xl font-bold text-white mb-6 drop-shadow-lg">
               Why PortAuto?
             </h3>
-            <p className="text-lg text-white leading-relaxed mb-8 drop-shadow">
+            <p className="text-lg text-white leading-relaxed drop-shadow">
               Whether you are looking for a fuel-efficient Toyota for a taxi fleet or a luxury Geely SUV for resale, PortAuto is your one-stop gateway to the Chinese auto market.
             </p>
-            <Link href="/about">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
-                Подробнее / More / 更多
-              </Button>
-            </Link>
           </div>
         </div>
       </div>
