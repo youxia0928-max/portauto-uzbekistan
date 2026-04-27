@@ -43,7 +43,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-end space-x-1">
             <Image src="/logo.webp" alt="AutoUzbek" width={100} height={40} className="h-8 w-auto" />
-            <span className="text-sm font-bold text-black pb-0.5">UZ</span>
+            <span className="text-sm font-bold text-white pb-0.5">UZ</span>
           </Link>
 
           {/* Desktop Navigation */}
