@@ -35,7 +35,8 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="absolute top-0 left-0 right-0 z-50 w-full">
+      <div className="bg-slate-900/50 backdrop-blur-sm">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
@@ -44,8 +45,8 @@ export default function Header() {
               <span className="text-white font-bold text-xl">A</span>
             </div>
             <div className="hidden sm:block">
-              <span className="text-xl font-bold text-slate-900">Auto</span>
-              <span className="text-xl font-bold text-orange-500">Uzbek</span>
+              <span className="text-xl font-bold text-white">Auto</span>
+              <span className="text-xl font-bold text-orange-400">Uzbek</span>
             </div>
           </Link>
 
@@ -55,7 +56,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-slate-700 hover:text-blue-900 transition-colors"
+                className="text-sm font-medium text-white hover:text-orange-400 transition-colors"
               >
                 {link.label}
               </Link>
@@ -87,13 +88,13 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden border-t py-4">
+          <nav className="md:hidden border-t border-white/20 py-4">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-base font-medium text-slate-700 hover:text-blue-900 transition-colors"
+                  className="text-base font-medium text-white hover:text-orange-400 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
@@ -102,6 +103,7 @@ export default function Header() {
             </div>
           </nav>
         )}
+      </div>
       </div>
     </header>
   );

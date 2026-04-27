@@ -9,7 +9,7 @@ export default function Hero() {
   const { t } = useLanguage();
 
   return (
-    <section className="relative h-[600px] md:h-[700px] overflow-hidden">
+    <section className="relative h-[600px] md:h-[700px] overflow-hidden -mt-16 pt-16">
       {/* Video Background */}
       <video
         autoPlay
