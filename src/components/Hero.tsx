@@ -10,13 +10,22 @@ export default function Hero() {
 
   return (
     <section className="relative h-[600px] md:h-[700px] overflow-hidden">
-      {/* Background Image - Car Port */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url('/hero-bg.jpg')`,
-        }}
-      />
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero-bg.mp4" type="video/mp4" />
+        {/* Fallback to image if video doesn't load */}
+        <img
+          src="/hero-bg.jpg"
+          alt="Hero Background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </video>
       
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/40" />
