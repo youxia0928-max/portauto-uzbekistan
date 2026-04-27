@@ -66,7 +66,7 @@ export default function AboutPage() {
                 {t('mission_text')}
               </p>
             </div>
-            <div className="relative h-[400px] rounded-2xl overflow-hidden">
+            <div className="relative h-[450px] rounded-3xl overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.15)]">
               <img
                 src="/about-bg.webp"
                 alt="About Portauto"
