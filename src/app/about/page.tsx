@@ -67,11 +67,10 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&q=80"
-                alt="Car showroom"
-                fill
-                className="object-cover"
+              <img
+                src="/about-bg.webp"
+                alt="About Portauto"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
