@@ -6,7 +6,7 @@ import { FileCheck, Shield, Truck } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
-// Case images - 13 client case photos
+// Case images - 12 client case photos
 const caseImages = [
   '/images/cases/01.webp',
   '/images/cases/02.webp',
@@ -20,7 +20,6 @@ const caseImages = [
   '/images/cases/10.webp',
   '/images/cases/11.webp',
   '/images/cases/12.webp',
-  '/images/cases/13.webp',
 ];
 
 const customsServices = [
