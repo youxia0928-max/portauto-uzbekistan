@@ -8,20 +8,20 @@ import { MapPin, Calendar, ArrowRight, FileCheck, Truck, Shield } from 'lucide-r
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 
-// Case images - 12 client case images
+// Case images - 12 client case images (local WebP files)
 const caseImages = [
-  'https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1617788138017-80ad40651399?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&h=600&fit=crop',
-  'https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&h=600&fit=crop',
+  '/case-images/1.webp',
+  '/case-images/2.webp',
+  '/case-images/3.webp',
+  '/case-images/4.webp',
+  '/case-images/5.webp',
+  '/case-images/6.webp',
+  '/case-images/7.webp',
+  '/case-images/8.webp',
+  '/case-images/9.webp',
+  '/case-images/10.webp',
+  '/case-images/11.webp',
+  '/case-images/12.webp',
 ];
 
 // Case data
