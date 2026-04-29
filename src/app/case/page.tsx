@@ -2,10 +2,8 @@
 
 import { useLanguage } from '@/lib/useLanguage';
 import type { TranslationKey } from '@/lib/translations';
-import { Card } from '@/components/ui/card';
-import { MapPin, Calendar, ArrowRight, FileCheck, Truck, Shield } from 'lucide-react';
+import { MapPin, ArrowRight, FileCheck, Truck, Shield } from 'lucide-react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 
 // Case images - 12 client case images (local WebP files)
 const caseImages = [
@@ -23,16 +21,7 @@ const caseImages = [
   '/case-images/12.webp',
 ];
 
-// Helper function to generate random date between 2022-01 and 2026-02
-function getRandomDate(): string {
-  const startDate = new Date(2022, 0, 1); // 2022-01-01
-  const endDate = new Date(2026, 1, 28); // 2026-02-28
-  const randomTime = startDate.getTime() + Math.random() * (endDate.getTime() - startDate.getTime());
-  const randomDate = new Date(randomTime);
-  return randomDate.toISOString().split('T')[0];
-}
-
-// Case data with random dates in 2022-2026 February range
+// Case data
 const exportCases = [
   {
     id: 1,
@@ -190,128 +179,138 @@ export default function CasePage() {
   const { t } = useLanguage();
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-black pt-16">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-800 py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      <section className="relative py-32 md:py-48 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-black to-black" />
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+          <h1 className="text-[48px] md:text-[64px] lg:text-[72px] font-bold text-white mb-6 leading-tight tracking-tight">
             {t('client_cases')}
           </h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            {t('case_subtitle')}
+          <p className="text-[18px] md:text-[20px] text-white/50 max-w-2xl mx-auto">
+            专业的汽车出口服务，值得信赖的合作伙伴
           </p>
         </div>
       </section>
 
-      {/* Cases Grid - 12 images in 3 columns */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
+      {/* Cases Grid - Tesla Style */}
+      <section className="py-16 bg-black">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {exportCases.map((item, index) => (
-              <Card key={item.id} className="overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer">
-                {/* Image with Location & Date overlay */}
+            {exportCases.map((caseItem, index) => (
+              <div 
+                key={caseItem.id}
+                className="group relative overflow-hidden border border-white/5 hover:border-[#e63946]/30 transition-all duration-500"
+              >
+                {/* Image */}
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
-                    src={caseImages[index]}
-                    alt={`${t(item.cityKey)}, ${item.country}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    loading="lazy"
+                    src={caseImages[index % caseImages.length]}
+                    alt={caseItem.carModel}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                  {/* Location and Date - Left/Right Layout */}
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div className="flex justify-between items-center text-white text-sm bg-white/15 backdrop-blur-md rounded-lg px-4 py-3">
-                      <span className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-orange-400" />
-                        <span>{t(item.cityKey)}, {item.country}</span>
-                      </span>
-                      <span className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-orange-400" />
-                        <span>{item.date}</span>
-                      </span>
-                    </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  
+                  {/* Quantity Badge */}
+                  <div className="absolute top-4 right-4 bg-[#e63946] text-white text-[12px] font-bold px-3 py-1.5 rounded">
+                    {caseItem.quantity} {t('units')}
+                  </div>
+                  
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 bg-black/60 backdrop-blur-sm text-white/80 text-[10px] uppercase tracking-wider px-3 py-1 rounded">
+                    {t(caseItem.categoryKey)}
                   </div>
                 </div>
-              </Card>
+
+                {/* Content */}
+                <div className="p-6 bg-[#0a0a0a]">
+                  {/* Model */}
+                  <h3 className="text-[18px] font-semibold text-white mb-3">
+                    {caseItem.carModel}
+                  </h3>
+                  
+                  {/* Location */}
+                  <div className="flex items-center text-white/50 text-[13px] mb-4">
+                    <MapPin className="w-4 h-4 mr-1.5" />
+                    {caseItem.country} · {t(caseItem.cityKey as TranslationKey)}
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-[13px] text-white/40 leading-relaxed mb-4">
+                    {t(caseItem.descriptionKey as TranslationKey)}
+                  </p>
+                  
+                  {/* Date */}
+                  <div className="text-[12px] text-white/30">
+                    {caseItem.date}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Customs Clearance Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">
-              {t('customs_clearance')}
+      {/* Customs Services - Tesla Style */}
+      <section className="py-24 bg-[#0a0a0a]">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-[14px] text-[#e63946] uppercase tracking-[0.3em] mb-4 font-medium">
+              {t('customs_services')}
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              {t('customs_clearance_desc')}
-            </p>
+            <h3 className="text-[36px] md:text-[48px] font-bold text-white leading-tight">
+              一站式清关服务
+            </h3>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="/customs.webp"
-                alt="Customs Clearance"
-                className="w-full h-auto"
-              />
-            </div>
-            <div className="space-y-6">
-              {customsServices.map((service, index) => (
-                <div key={index} className="flex items-start gap-4 p-4 bg-slate-50 rounded-xl hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <service.icon className="w-6 h-6 text-blue-900" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-1">
-                      {t(service.title as TranslationKey)}
-                    </h3>
-                    <p className="text-slate-600 text-sm">
-                      {t(service.desc as TranslationKey)}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* CTA Section - All Models Banner */}
-      <section 
-        className="py-24 bg-cover bg-center bg-no-repeat relative"
-        style={{ backgroundImage: 'linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.9)), url(/case-images/1.webp)' }}
-      >
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-            {t('all_models_you_want')}
-          </h2>
-          <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-2xl mx-auto">
-            {t('contact_us_desc')}
-          </p>
-          <Link href="/contact">
-            <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white px-12 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
-              {t('contact_us')}
-            </Button>
-          </Link>
-        </div>
-      </section>
-
-      {/* Stats Images Section */}
-      <section className="py-16 bg-slate-50">
-        <div className="container mx-auto px-4">
+          {/* Services Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src="/stats/stat-new.webp" alt="Stat 1" className="w-full h-64 object-cover" />
-            </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src="/stats/stat-2.webp" alt="Stat 2" className="w-full h-64 object-cover" />
-            </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <img src="/stats/stat-3.webp" alt="Stat 3" className="w-full h-64 object-cover" />
-            </div>
+            {customsServices.map((service, index) => (
+              <div
+                key={index}
+                className="p-10 border border-white/10 rounded-xl hover:border-[#e63946]/30 transition-all duration-300 hover:bg-white/[0.02]"
+              >
+                <div className="w-14 h-14 bg-white/5 rounded-full flex items-center justify-center mb-6">
+                  <service.icon className="w-7 h-7 text-white/50" />
+                </div>
+                <h4 className="text-[18px] font-semibold text-white mb-3">
+                  {t(service.title as TranslationKey)}
+                </h4>
+                <p className="text-[14px] text-white/40 leading-relaxed">
+                  {t(service.desc as TranslationKey)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 bg-black relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#e63946]/5 via-transparent to-transparent" />
+        
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+          <h2 className="text-[36px] md:text-[48px] font-bold text-white mb-6">
+            开始您的汽车出口业务
+          </h2>
+          <p className="text-[16px] text-white/50 mb-10 max-w-xl mx-auto">
+            联系我们，获取专业报价和咨询服务
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link 
+              href="/contact"
+              className="inline-flex items-center justify-center px-10 py-4 bg-[#e63946] text-white text-[14px] font-medium uppercase tracking-wider rounded hover:bg-[#c1121f] transition-all duration-300 hover:scale-[1.02]"
+            >
+              {t('contact_us')}
+              <ArrowRight className="ml-2 w-4 h-4" />
+            </Link>
+            <Link 
+              href="/"
+              className="inline-flex items-center justify-center px-10 py-4 bg-white/5 backdrop-blur-sm text-white text-[14px] font-medium uppercase tracking-wider rounded border border-white/20 hover:bg-white/10 transition-all duration-300"
+            >
+              {t('home')}
+            </Link>
           </div>
         </div>
       </section>

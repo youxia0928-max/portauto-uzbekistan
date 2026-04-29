@@ -6,7 +6,6 @@ import HowItWorks from '@/components/HowItWorks';
 import NewsSection from '@/components/NewsSection';
 import { useLanguage } from '@/lib/useLanguage';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 // 6个案例图片 - 使用案例页面本地图片
@@ -23,89 +22,91 @@ export default function HomePage() {
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-black">
       {/* Hero Section */}
       <Hero />
 
-      {/* Stats Section - Key Data Display */}
-      <StatsSection />
-
-      {/* Cases Gallery Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+      {/* Cases Gallery Section - Tesla Style */}
+      <section className="py-32 bg-black">
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-[14px] text-[#e63946] uppercase tracking-[0.3em] mb-4 font-medium">
               {t('case')}
             </h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              专业的汽车出口服务，覆盖全球20+国家和地区
-            </p>
+            <h3 className="text-[40px] md:text-[56px] font-bold text-white leading-tight">
+              成功案例
+            </h3>
           </div>
 
-          {/* 12 Images Grid - 3x4 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+          {/* Images Grid - Tesla Style */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-12">
             {caseImages.map((image, index) => (
               <div
                 key={index}
-                className="relative group overflow-hidden rounded-lg aspect-[4/3] cursor-pointer"
+                className="relative group overflow-hidden aspect-[4/3] cursor-pointer"
               >
                 <img
                   src={image}
                   alt={`Case ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
           </div>
 
-          {/* More Button */}
+          {/* View More Button - Tesla Style */}
           <div className="text-center">
-            <Link href="/case">
-              <Button 
-                size="lg" 
-                className="bg-blue-900 hover:bg-blue-800"
-              >
-                更多案例
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
+            <Link 
+              href="/case"
+              className="inline-flex items-center justify-center px-10 py-4 bg-white/5 backdrop-blur-sm text-white text-[14px] font-medium uppercase tracking-wider rounded border border-white/20 hover:bg-white/10 hover:border-white/40 transition-all duration-300"
+            >
+              {t('more')}
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* How It Works Section - 3 Steps Process */}
+      {/* How It Works Section */}
       <HowItWorks />
 
-      {/* News Section */}
-      <NewsSection />
+      {/* Stats Section */}
+      <StatsSection />
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-700">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      {/* CTA Section - Tesla Style */}
+      <section className="py-32 bg-gradient-to-b from-black via-[#0a0a0a] to-black relative overflow-hidden">
+        {/* Background accent */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#e63946]/5 via-transparent to-transparent" />
+        
+        <div className="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-12 text-center">
+          <h2 className="text-[40px] md:text-[56px] font-bold text-white mb-6 leading-tight">
             {t('b2b_service')}
           </h2>
-          <p className="text-slate-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-[18px] text-white/50 mb-12 max-w-2xl mx-auto">
             {t('b2b_service_desc')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/case">
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto">
-                {t('explore_catalog')}
-              </Button>
+            <Link 
+              href="/case"
+              className="inline-flex items-center justify-center px-10 py-4 bg-[#e63946] text-white text-[14px] font-medium uppercase tracking-wider rounded hover:bg-[#c1121f] transition-all duration-300 hover:scale-[1.02]"
+            >
+              {t('explore_catalog')}
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
-            <Link href="/contact">
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto bg-transparent border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                {t('contact')}
-              </Button>
+            <Link 
+              href="/contact"
+              className="inline-flex items-center justify-center px-10 py-4 bg-white/5 backdrop-blur-sm text-white text-[14px] font-medium uppercase tracking-wider rounded border border-white/20 hover:bg-white/10 transition-all duration-300"
+            >
+              {t('contact')}
             </Link>
           </div>
         </div>
       </section>
+
+      {/* News Section */}
+      <NewsSection />
     </div>
   );
 }

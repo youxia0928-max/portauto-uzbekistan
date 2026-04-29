@@ -10,18 +10,18 @@ export default function TelegramButton() {
       href="https://t.me/uzauto_ray"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 group"
+      className="fixed bottom-8 right-8 z-50 group"
       aria-label="Telegram"
     >
       {/* Tooltip */}
-      <div className="absolute right-full mr-3 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        <div className="bg-slate-900 text-white text-sm px-4 py-2 rounded-lg whitespace-nowrap">
+      <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none -translate-x-2 group-hover:translate-x-0">
+        <div className="bg-white text-black text-[12px] px-4 py-2 rounded font-medium whitespace-nowrap">
           {t('telegram')}
         </div>
       </div>
       
-      {/* Button */}
-      <div className="w-14 h-14 bg-blue-500 hover:bg-blue-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110">
+      {/* Button - Tesla Style */}
+      <div className="w-14 h-14 bg-[#e63946] hover:bg-[#c1121f] rounded-full flex items-center justify-center shadow-2xl hover:shadow-[#e63946]/30 transition-all duration-300 hover:scale-110 hover:shadow-xl">
         <svg 
           viewBox="0 0 24 24" 
           className="w-7 h-7 text-white fill-current"
