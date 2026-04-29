@@ -4,7 +4,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from '@/lib/useLanguage';
 import { Menu, X, Globe } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 
 const languages = [
   { code: 'ru' as const, label: 'Русский' },
@@ -15,15 +16,6 @@ const languages = [
 export default function Header() {
   const { language, setLanguage, t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const navLinks = [
     { href: '/', label: t('home') },
@@ -44,85 +36,70 @@ export default function Header() {
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-black/80 backdrop-blur-xl border-b border-white/5' 
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-slate-900/80 backdrop-blur-sm">
+      <div className="bg-slate-900/50 backdrop-blur-sm">
+      <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo - Tesla Style */}
-          <Link href="/" className="flex items-end space-x-1 group">
-            <Image 
-              src="/logo.webp" 
-              alt="AutoUzbek" 
-              width={120} 
-              height={48} 
-              className="h-10 w-auto brightness-0 invert group-hover:brightness-100 transition-all duration-300" 
-            />
-            <span className="text-[10px] font-bold text-white/70 pb-0.5 ml-1 tracking-wider group-hover:text-white transition-colors">
-              UZ
-            </span>
+          {/* Logo */}
+          <Link href="/" className="flex items-end space-x-1">
+            <Image src="/logo.webp" alt="AutoUzbek" width={100} height={40} className="h-8 w-auto" />
+            <span className="text-sm font-bold text-white pb-0.5">UZ</span>
           </Link>
 
-          {/* Desktop Navigation - Ultra Minimal */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-[13px] font-medium text-white/70 hover:text-white tracking-wide uppercase transition-colors duration-200"
+                className="text-sm font-medium text-white hover:text-orange-400 transition-colors"
               >
                 {link.label}
               </Link>
             ))}
           </nav>
 
-          {/* Right Side - Language */}
+          {/* Language Switcher & Mobile Menu */}
           <div className="flex items-center space-x-4">
-            {/* Language Switcher */}
-            <button
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={cycleLanguage}
-              className="flex items-center space-x-1 text-[13px] font-medium text-white/70 hover:text-white tracking-wide transition-colors duration-200"
+              className="flex items-center space-x-1 text-white hover:text-orange-400"
             >
-              <Globe className="w-4 h-4" />
-              <span className="hidden sm:inline">{getCurrentLanguageLabel()}</span>
-            </button>
+              <Globe className="w-4 h-4 text-white" />
+              <span className="text-sm font-medium text-white">{getCurrentLanguageLabel()}</span>
+            </Button>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden text-white p-2 -mr-2"
+            <Button
+              variant="ghost"
+              size="sm"
+              className="md:hidden text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
+              {mobileMenuOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+            </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation - Full Screen Overlay */}
+        {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed inset-0 top-16 bg-black/95 backdrop-blur-xl z-40">
-            <nav className="flex flex-col items-center justify-center h-full space-y-8">
-              {navLinks.map((link, index) => (
+          <nav className="md:hidden border-t border-white/20 py-4">
+            <div className="flex flex-col space-y-4">
+              {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-[24px] font-medium text-white hover:text-[#e63946] tracking-wide uppercase transition-colors duration-200"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="text-base font-medium text-white hover:text-orange-400 transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
-            </nav>
-          </div>
+            </div>
+          </nav>
         )}
+      </div>
       </div>
     </header>
   );
