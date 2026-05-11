@@ -1,6 +1,4 @@
-import { NextResponse } from 'next/server';
-
-export async function GET(request: Request) {
+export async function onRequestGet({ request }: { request: Request }) {
   try {
     // 获取用户IP
     const forwardedFor = request.headers.get('x-forwarded-for');
@@ -25,11 +23,11 @@ export async function GET(request: Request) {
     // 尝试通过IP地址判断地区
     // 乌兹别克斯坦IP段
     const uzbekistanPrefixes = ['91.', '213.', '178.', '188.', '84.', '62.', '5.', '109.', '195.'];
-    const isUzbekistan = uzbekistanPrefixes.some(prefix => ip.startsWith(prefix));
+    const isUzbekistan = uzbekistanPrefixes.some((prefix: string) => ip.startsWith(prefix));
     
     // 中国IP段（简化判断）
     const chinaPrefixes = ['1.', '14.', '36.', '39.', '42.', '43.', '49.', '58.', '59.', '60.', '61.', '101.', '103.', '106.', '110.', '111.', '112.', '113.', '114.', '115.', '116.', '117.', '118.', '119.', '120.', '121.', '122.', '123.', '124.', '125.', '140.', '144.', '150.', '153.', '157.', '171.', '175.', '180.', '182.', '183.', '202.', '203.', '210.', '211.', '218.', '220.', '221.', '222.'];
-    const isChina = chinaPrefixes.some(prefix => ip.startsWith(prefix));
+    const isChina = chinaPrefixes.some((prefix: string) => ip.startsWith(prefix));
     
     // IP判断权重低于浏览器语言判断
     if (isUzbekistan && language === 'en') {
@@ -39,16 +37,25 @@ export async function GET(request: Request) {
       language = 'zh';
     }
     
-    return NextResponse.json({
+    return new Response(JSON.stringify({
       ip,
       language,
       acceptLanguage,
       timestamp: new Date().toISOString(),
+    }), {
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
     });
   } catch (error) {
-    return NextResponse.json({
+    return new Response(JSON.stringify({
       language: 'ru', // 出错时默认俄语
-      error: 'Language detection failed',
+      error: 'Detection failed',
+    }), {
+      headers: {
+        'Content-Type': 'application/json',
+      },
     });
   }
 }
